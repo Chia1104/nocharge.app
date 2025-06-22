@@ -40,7 +40,7 @@ importers:
       '@chia/api': '*'
       '@chia/tailwind-config': '*'
       '@expo/config-plugins': ^6.0.0
-      '@shopify/flash-list': 1.4.0
+      '@shopify/flash-list': 1.8.3
       '@tanstack/react-query': ^4.24.10
       '@trpc/client': ^10.14.0
       '@trpc/react-query': ^10.14.0
@@ -67,7 +67,7 @@ importers:
       tailwindcss: ^3.2.7
       typescript: ^4.9.5
     dependencies:
-      '@shopify/flash-list': 1.4.0_guwohi4nlpi5pltiuinnykzlhi
+      '@shopify/flash-list': 1.8.3_guwohi4nlpi5pltiuinnykzlhi
       '@tanstack/react-query': 4.26.1_bblof3d6od7kdqr2urb3dykbey
       '@trpc/client': 10.15.0_@trpc+server@10.15.0
       '@trpc/react-query': 10.15.0_7cicpoc2aivmas2bivo4obksf4
@@ -1959,7 +1959,7 @@ packages:
       rimraf: 2.7.1
       sudo-prompt: 8.2.5
       tmp: 0.0.33
-      tslib: 2.5.0
+      tslib: 2.8.1
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -2525,7 +2525,7 @@ packages:
       open: 8.4.2
       picocolors: 1.0.0
       tiny-glob: 0.2.9
-      tslib: 2.5.0
+      tslib: 2.8.1
     dev: false
 
   /@prisma/client/4.11.0_prisma@4.11.0:
@@ -2885,8 +2885,8 @@ packages:
       join-component: 1.1.0
     dev: false
 
-  /@shopify/flash-list/1.4.0_guwohi4nlpi5pltiuinnykzlhi:
-    resolution: {integrity: sha512-PvPOyk353LuETFnNA038+QaJsAFlCQ2TYC7DHP3YnYqTX72g2BM6qLoLsPaptXKuoXX+dinOo0MbEm7HDjTy1g==}
+  /@shopify/flash-list/1.8.3_guwohi4nlpi5pltiuinnykzlhi:
+    resolution: {integrity: sha512-vXuj6JyuMjONVOXjEhWFeaONPuWN/53Cl2LeyeM8TZ0JzUcNU+BE6iyga1/yyJeDf0K7YPgAE/PcUX2+DM1LiA==}
     peerDependencies:
       '@babel/runtime': '*'
       react: '*'
@@ -2895,8 +2895,8 @@ packages:
       '@babel/runtime': 7.21.0
       react: 18.2.0
       react-native: 0.71.3_raab37p3ikkajcivlo24zcd7ie
-      recyclerlistview: 4.2.0_yqouayos4dnow7nnkhah4yzuzq
-      tslib: 2.4.0
+      recyclerlistview: 4.2.3_yqouayos4dnow7nnkhah4yzuzq
+      tslib: 2.8.1
     dev: false
 
   /@sideway/address/4.1.4:
@@ -2937,7 +2937,7 @@ packages:
   /@swc/helpers/0.4.14:
     resolution: {integrity: sha512-4C7nX/dvpzB7za4Ql9K81xK3HPxCpHMgwTZVyf+9JQ6VUbn9jjZVN7/Nkdz/Ugzs2CSjqnL/UPXroiVBVHUWUw==}
     dependencies:
-      tslib: 2.5.0
+      tslib: 2.8.1
     dev: false
 
   /@szmarczak/http-timer/1.1.2:
@@ -3576,7 +3576,7 @@ packages:
     resolution: {integrity: sha512-O0yuUDnZeQDL+ncNGlJ78BiO4jnYI3bvMsD5prT0/nsgijG/LpNBIr63gTjVTNsiGkgQhiyCShTgxt8oXOrklA==}
     engines: {node: '>=4'}
     dependencies:
-      tslib: 2.5.0
+      tslib: 2.8.1
     dev: false
 
   /astral-regex/1.0.0:
@@ -5982,7 +5982,7 @@ packages:
       graphql: ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
       graphql: 15.8.0
-      tslib: 2.5.0
+      tslib: 2.8.1
     dev: false
 
   /graphql/15.8.0:
@@ -9025,11 +9025,11 @@ packages:
       ast-types: 0.14.2
       esprima: 4.0.1
       source-map: 0.6.1
-      tslib: 2.5.0
+      tslib: 2.8.1
     dev: false
 
-  /recyclerlistview/4.2.0_yqouayos4dnow7nnkhah4yzuzq:
-    resolution: {integrity: sha512-uuBCi0c+ggqHKwrzPX4Z/mJOzsBbjZEAwGGmlwpD/sD7raXixdAbdJ6BTcAmuWG50Cg4ru9p12M94Njwhr/27A==}
+  /recyclerlistview/4.2.3_yqouayos4dnow7nnkhah4yzuzq:
+    resolution: {integrity: sha512-STR/wj/FyT8EMsBzzhZ1l2goYirMkIgfV3gYEPxI3Kf3lOnu6f7Dryhyw7/IkQrgX5xtTcDrZMqytvteH9rL3g==}
     peerDependencies:
       react: '>= 15.2.1'
       react-native: '>= 0.30.0'
@@ -9273,7 +9273,7 @@ packages:
   /rxjs/7.8.0:
     resolution: {integrity: sha512-F2+gxDshqmIub1KdvZkaEfGDwLNpPvk9Fs6LD/MyQxNgMds/WH9OdDDXOmxUZpME+iSK3rQCctkL0DYyytUqMg==}
     dependencies:
-      tslib: 2.5.0
+      tslib: 2.8.1
     dev: false
 
   /safe-buffer/5.1.2:
@@ -9897,7 +9897,7 @@ packages:
     engines: {node: ^14.18.0 || >=16.0.0}
     dependencies:
       '@pkgr/utils': 2.3.1
-      tslib: 2.5.0
+      tslib: 2.8.1
     dev: false
 
   /tailwindcss/3.2.7_postcss@8.4.21:
@@ -10137,12 +10137,8 @@ packages:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
     dev: false
 
-  /tslib/2.4.0:
-    resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
-    dev: false
-
-  /tslib/2.5.0:
-    resolution: {integrity: sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg==}
+  /tslib/2.8.1:
+    resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
     dev: false
 
   /tsutils/3.21.0_typescript@4.9.5:
