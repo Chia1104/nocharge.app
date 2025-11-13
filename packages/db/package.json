@@ -1,21 +1,55 @@
 {
-  "name": "@chia/db",
-  "version": "0.1.0",
-  "main": "./index.ts",
-  "types": "./index.ts",
-  "license": "MIT",
+  "$schema": "https://json.schemastore.org/package",
+  "name": "@nocharge/db",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./client": {
+      "types": "./src/client.ts",
+      "default": "./src/client.ts"
+    },
+    "./schema": {
+      "types": "./src/schema/index.ts",
+      "default": "./src/schema/index.ts"
+    },
+    "./env": {
+      "types": "./src/env.ts",
+      "default": "./src/env.ts"
+    }
+  },
   "scripts": {
-    "clean": "rm -rf .turbo node_modules",
-    "db:generate": "prisma generate",
-    "db:push": "prisma db push --skip-generate",
-    "dev": "prisma studio --port 5556",
-    "postinstall": "prisma generate"
+    "db:push": "drizzle-kit push",
+    "db:pull": "drizzle-kit pull",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio",
+    "type:check": "tsc --noEmit",
+    "clean": "git clean -xdf .turbo node_modules dist .cache",
+    "db:check": "tsx --env-file=../../.env check.ts",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "migrate:run": "tsx --env-file=../../.env migrate.ts"
   },
   "dependencies": {
-    "@prisma/client": "^4.11.0"
+    "@nocharge/kv": "workspace:*",
+    "@t3-oss/env-core": "catalog:",
+    "drizzle-orm": "^0.44.7",
+    "drizzle-zod": "^0.8.3",
+    "pg": "^8.16.3",
+    "zod": "catalog:"
   },
   "devDependencies": {
-    "prisma": "^4.11.0",
-    "typescript": "^4.9.5"
+    "@nocharge/eslint-config": "workspace:*",
+    "@nocharge/tsconfig": "workspace:*",
+    "@nocharge/utils": "workspace:*",
+    "@types/pg": "^8.15.6",
+    "drizzle-kit": "^0.31.6",
+    "eslint": "catalog:eslint",
+    "typescript": "catalog:"
   }
 }

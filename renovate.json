@@ -3,7 +3,7 @@
   "extends": ["config:base"],
   "packageRules": [
     {
-      "matchPackagePatterns": ["^@chia/", "eslint-config-chia"],
+      "matchPackagePatterns": ["^@nocharge/"],
       "enabled": false
     }
   ],

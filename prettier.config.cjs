@@ -1,37 +1,21 @@
-/** @type {import("prettier").Config & { [key:string]: any }} */
-const config = {
-  arrowParens: "always",
+/** @type {import("prettier").Config} */
+module.exports = {
+  endOfLine: "auto",
   printWidth: 80,
-  singleQuote: false,
-  jsxSingleQuote: false,
-  semi: true,
-  trailingComma: "all",
   tabWidth: 2,
-  plugins: [
-    "@ianvs/prettier-plugin-sort-imports",
-    "prettier-plugin-tailwindcss",
-  ],
-  tailwindConfig: "./packages/config/tailwind",
+  trailingComma: "es5",
+  bracketSameLine: true,
   importOrder: [
-    "^(react/(.*)$)|^(react$)|^(react-native(.*)$)",
-    "^(next/(.*)$)|^(next$)",
-    "^(expo(.*)$)|^(expo$)",
+    "^react$",
     "<THIRD_PARTY_MODULES>",
-    "",
     "^@chia/(.*)$",
-    "",
-    "^~/utils/(.*)$",
-    "^~/components/(.*)$",
-    "^~/styles/(.*)$",
-    "^~/(.*)$",
+    "^@/(.*)$",
     "^[./]",
   ],
-  importOrderSeparation: false,
-  importOrderSortSpecifiers: true,
-  importOrderBuiltinModulesToTop: true,
+  importOrderSeparation: true,
   importOrderParserPlugins: ["typescript", "jsx", "decorators-legacy"],
-  importOrderMergeDuplicateImports: true,
-  importOrderCombineTypeAndValueImports: true,
+  plugins: [
+    require.resolve("prettier-plugin-tailwindcss"),
+    require.resolve("@trivago/prettier-plugin-sort-imports"),
+  ],
 };
-
-module.exports = config;

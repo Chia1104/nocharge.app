@@ -1,26 +1,61 @@
 {
-  "name": "@chia/auth",
-  "version": "0.1.0",
-  "main": "./index.ts",
-  "types": "./index.ts",
-  "license": "MIT",
+  "$schema": "https://json.schemastore.org/package",
+  "name": "@nocharge/auth",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./client": {
+      "types": "./src/client.ts",
+      "react-server": "./src/client.rsc.ts",
+      "default": "./src/client.ts"
+    },
+    "./utils": {
+      "types": "./src/utils.ts",
+      "default": "./src/utils.ts"
+    },
+    "./env": {
+      "types": "./src/env.ts",
+      "default": "./src/env.ts"
+    },
+    "./env.client": {
+      "types": "./src/env.client.ts",
+      "default": "./src/env.client.ts"
+    },
+    "./types": {
+      "types": "./src/types.ts",
+      "default": "./src/types.ts"
+    }
+  },
   "scripts": {
-    "clean": "rm -rf .turbo node_modules",
-    "lint": "eslint .",
-    "lint:fix": "pnpm lint --fix",
-    "type-check": "tsc --noEmit"
+    "clean": "git clean -xdf .turbo node_modules dist .cache",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "type:check": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "test:watch": "vitest --passWithNoTests",
+    "auth-schema:generate": "SKIP_ENV_VALIDATION=1 pnpm dlx @better-auth/cli generate --config src/index.ts"
   },
   "dependencies": {
-    "@chia/db": "*",
-    "@next-auth/prisma-adapter": "^1.0.5",
-    "next": "^13.2.3",
-    "next-auth": "^4.20.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "@nocharge/db": "workspace:*",
+    "@nocharge/kv": "workspace:*",
+    "@nocharge/utils": "workspace:*",
+    "@t3-oss/env-core": "catalog:",
+    "better-auth": "^1.3.34",
+    "client-only": "catalog:",
+    "dayjs": "catalog:",
+    "resend": "^6.4.2",
+    "server-only": "catalog:",
+    "zod": "catalog:"
   },
   "devDependencies": {
-    "eslint": "^8.34.0",
-    "eslint-config-base": "0.0.0",
-    "typescript": "^4.9.5"
+    "@nocharge/eslint-config": "workspace:*",
+    "@nocharge/tsconfig": "workspace:*",
+    "eslint": "catalog:eslint",
+    "typescript": "catalog:"
   }
 }

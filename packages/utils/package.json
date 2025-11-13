@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json.schemastore.org/package",
+  "name": "@nocharge/utils",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./day": {
+      "types": "./src/day.ts",
+      "default": "./src/day.ts"
+    },
+    "./is": {
+      "types": "./src/is.ts",
+      "default": "./src/is.ts"
+    },
+    "./format": {
+      "types": "./src/format.ts",
+      "default": "./src/format.ts"
+    }
+  },
+  "scripts": {
+    "clean": "git clean -xdf .turbo node_modules dist .cache",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "type:check": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "dayjs": "catalog:",
+    "ky": "catalog:",
+    "lodash": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@nocharge/eslint-config": "workspace:*",
+    "@nocharge/tsconfig": "workspace:*",
+    "@types/express": "^5.0.5",
+    "eslint": "catalog:eslint",
+    "typescript": "catalog:"
+  }
+}

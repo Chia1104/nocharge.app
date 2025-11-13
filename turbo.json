@@ -2,20 +2,12 @@
   "$schema": "https://turborepo.org/schema.json",
   "globalDependencies": ["**/.env"],
   "pipeline": {
-    "db:generate": {
-      "inputs": ["prisma/schema.prisma"],
-      "cache": false
-    },
-    "db:push": {
-      "inputs": ["prisma/schema.prisma"],
-      "cache": false
-    },
     "dev": {
       "persistent": true,
       "cache": false
     },
     "build": {
-      "dependsOn": ["^build", "^db:generate"],
+      "dependsOn": ["^build"],
       "outputs": [".next/**", ".expo/**"]
     },
     "lint": {},
@@ -26,8 +18,7 @@
     "//#clean": {
       "cache": false
     },
-    "type-check": {
-      "dependsOn": ["^db:generate"],
+    "type:check": {
       "cache": false
     }
   },
@@ -36,8 +27,8 @@
     "DATABASE_URL",
     "GOOGLE_CLIENT_ID",
     "GOOGLE_CLIENT_SECRET",
-    "NEXTAUTH_SECRET",
-    "NEXTAUTH_URL",
+    "AUTH_SECRET",
+    "AUTH_URL",
     "NODE_ENV",
     "SKIP_ENV_VALIDATION",
     "VERCEL",
