@@ -99,6 +99,7 @@ android {
         resourceConfigurations += ["en", "zh_tW"]
         resourceConfigurations += ["en", "zh_tW"]
         resourceConfigurations += ["en", "zh_tW"]
+        resourceConfigurations += ["en", "zh_tW"]
     }
     signingConfigs {
         debug {

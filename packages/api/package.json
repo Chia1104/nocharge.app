@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json.schemastore.org/package",
+  "name": "@nocharge/api",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "type:check": "tsc --noEmit",
+    "clean": "git clean -xdf .turbo node_modules dist .cache",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@nocharge/auth": "workspace:*",
+    "@nocharge/db": "workspace:*",
+    "@nocharge/kv": "workspace:*",
+    "@nocharge/utils": "workspace:*",
+    "@t3-oss/env-core": "catalog:",
+    "@trpc/client": "catalog:trpc",
+    "@trpc/server": "catalog:trpc",
+    "client-only": "catalog:",
+    "dayjs": "catalog:",
+    "github-slugger": "^2.0.0",
+    "graphql-request": "catalog:",
+    "ky": "catalog:",
+    "server-only": "catalog:",
+    "superjson": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@nocharge/eslint-config": "workspace:*",
+    "@nocharge/tsconfig": "workspace:*",
+    "eslint": "catalog:eslint",
+    "typescript": "catalog:"
+  }
+}

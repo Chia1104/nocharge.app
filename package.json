@@ -21,7 +21,15 @@
     "lint:fix": "turbo run lint --continue -- --fix --cache --cache-location .cache/.eslintcache",
     "format": "prettier --write \"**/*.{js,cjs,mjs,ts,tsx,md,json}\" --ignore-path .gitignore",
     "format:check": "prettier --check \"**/*.{js,jsx,cjs,mjs,ts,tsx,md,vue,json}\"",
-    "type:check": "turbo run type:check --parallel"
+    "type:check": "turbo run type:check --parallel",
+    "db:up": "docker-compose -f db.docker-compose.yaml up",
+    "db:generate": "turbo run db:generate",
+    "db:migrate": "turbo run db:migrate",
+    "db:pull": "turbo run db:pull",
+    "db:push": "cd packages/db && pnpm run db:push",
+    "db:init": "turbo run db:init --parallel",
+    "db:seed": "turbo run db:seed --parallel",
+    "db:studio": "turbo run db:studio --parallel"
   },
   "dependencies": {
     "@manypkg/cli": "^0.25.1",

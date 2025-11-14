@@ -17,7 +17,7 @@ const getOrigin = (url?: string) => {
 };
 
 export const auth = betterAuth({
-  appName: "NoCharge.app",
+  appName: "NoCharge",
 
   /**
    * session configuration

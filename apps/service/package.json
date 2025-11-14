@@ -1,0 +1,32 @@
+{
+  "name": "service",
+  "type": "module",
+  "scripts": {
+    "dev": "nitro dev",
+    "build": "nitro build",
+    "type:check": "tsc --noEmit",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.19.6",
+    "@hono/sentry": "^1.2.2",
+    "@nocharge/api": "workspace:*",
+    "@nocharge/auth": "workspace:*",
+    "@nocharge/db": "workspace:*",
+    "@nocharge/kv": "workspace:*",
+    "@nocharge/utils": "workspace:*",
+    "hono": "^4.10.5",
+    "ky": "catalog:",
+    "lodash": "catalog:",
+    "nitro": "3.0.1-alpha.1",
+    "workflow": "4.0.1-beta.13",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@nocharge/eslint-config": "workspace:*",
+    "@nocharge/tsconfig": "workspace:*",
+    "@types/node": "catalog:",
+    "eslint": "catalog:eslint",
+    "typescript": "catalog:"
+  }
+}

@@ -32,6 +32,30 @@
     },
     "type:check": {
       "cache": false
+    },
+    "db:up": {
+      "cache": false
+    },
+    "db:generate": {
+      "cache": false
+    },
+    "db:migrate": {
+      "cache": false
+    },
+    "db:pull": {
+      "cache": false
+    },
+    "db:push": {
+      "cache": false
+    },
+    "db:init": {
+      "cache": false
+    },
+    "db:seed": {
+      "cache": false
+    },
+    "db:studio": {
+      "cache": false
     }
   },
   "globalEnv": [

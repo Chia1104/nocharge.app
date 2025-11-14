@@ -1,6 +1,6 @@
 import { kv } from "@nocharge/kv";
 import { DrizzleCache } from "@nocharge/kv/drizzle/cache";
-import { switchEnv } from "@nocharge/utils/config";
+import { switchEnv } from "@nocharge/utils/server";
 import { drizzle } from "drizzle-orm/node-postgres";
 import { withReplicas } from "drizzle-orm/pg-core";
 import pg from "pg";

@@ -16,6 +16,14 @@
     "./format": {
       "types": "./src/format.ts",
       "default": "./src/format.ts"
+    },
+    "./server": {
+      "types": "./src/server.ts",
+      "default": "./src/server.ts"
+    },
+    ".": {
+      "types": "./src/utils.ts",
+      "default": "./src/utils.ts"
     }
   },
   "scripts": {
