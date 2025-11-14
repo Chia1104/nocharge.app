@@ -261,9 +261,6 @@ importers:
 
   apps/service:
     dependencies:
-      '@hono/node-server':
-        specifier: ^1.19.6
-        version: 1.19.6(hono@4.10.5)
       '@hono/sentry':
         specifier: ^1.2.2
         version: 1.2.2(hono@4.10.5)
@@ -1804,12 +1801,6 @@ packages:
 
   '@hexagon/base64@1.1.28':
     resolution: {integrity: sha512-lhqDEAvWixy3bZ+UOYbPwUbBkwBq5C1LAJ/xPC8Oi+lL54oyakv/npbA0aU2hgCsx/1NUd4IBvV03+aUBWxerw==}
-
-  '@hono/node-server@1.19.6':
-    resolution: {integrity: sha512-Shz/KjlIeAhfiuE93NDKVdZ7HdBVLQAfdbaXEaoAVO3ic9ibRSLGIQGkcBbFyuLr+7/1D5ZCINM8B+6IvXeMtw==}
-    engines: {node: '>=18.14.1'}
-    peerDependencies:
-      hono: ^4
 
   '@hono/sentry@1.2.2':
     resolution: {integrity: sha512-027grZBrRGDPor8mRd+QOBcSpUlF07YrTp/WFDXZhbvWZ+1LrZdERUqcdg1gBGDUTanHhd9ucblpNNN6+V1bxg==}
@@ -10414,10 +10405,6 @@ snapshots:
       graphql: 16.12.0
 
   '@hexagon/base64@1.1.28': {}
-
-  '@hono/node-server@1.19.6(hono@4.10.5)':
-    dependencies:
-      hono: 4.10.5
 
   '@hono/sentry@1.2.2(hono@4.10.5)':
     dependencies:

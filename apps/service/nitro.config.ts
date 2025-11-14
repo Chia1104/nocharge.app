@@ -2,9 +2,8 @@ import { defineNitroConfig } from "nitro/config";
 import { fileURLToPath } from "node:url";
 
 export default defineNitroConfig({
-  srcDir: "src",
-  entry: "src/index.ts",
-  modules: ["workflow/nitro"],
+  serverDir: "src",
+  // modules: ["workflow/nitro"],
   typescript: {
     tsconfigPath: "./tsconfig.build.json",
   },

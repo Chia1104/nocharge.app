@@ -17,6 +17,8 @@
     "dev": "turbo dev --continue",
     "dev:android": "turbo dev:android --continue",
     "dev:ios": "turbo dev:ios --continue",
+    "start": "turbo run start --continue",
+    "preview": "turbo run preview --continue",
     "lint": "turbo run lint --continue -- --cache --cache-location .cache/.eslintcache",
     "lint:fix": "turbo run lint --continue -- --fix --cache --cache-location .cache/.eslintcache",
     "format": "prettier --write \"**/*.{js,cjs,mjs,ts,tsx,md,json}\" --ignore-path .gitignore",

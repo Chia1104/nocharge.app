@@ -5,10 +5,11 @@
     "dev": "nitro dev",
     "build": "nitro build",
     "type:check": "tsc --noEmit",
-    "lint": "eslint"
+    "lint": "eslint",
+    "preview": "node --env-file=.env .output/server/index.mjs",
+    "start": "node .output/server/index.mjs"
   },
   "dependencies": {
-    "@hono/node-server": "^1.19.6",
     "@hono/sentry": "^1.2.2",
     "@nocharge/api": "workspace:*",
     "@nocharge/auth": "workspace:*",
