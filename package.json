@@ -10,6 +10,7 @@
   "scripts": {
     "postinstall": "manypkg check",
     "prepare": "husky",
+    "prebuild": "turbo run prebuild --parallel",
     "build": "turbo run build",
     "clean": "git clean -xdf node_modules .cache",
     "clean:workspaces": "turbo clean --parallel",

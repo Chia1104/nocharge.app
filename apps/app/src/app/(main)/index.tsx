@@ -17,6 +17,7 @@ import { withUniwind } from "uniwind";
 
 import { ScreenScrollView } from "@/components/screen-scroll-view";
 import { useAppTheme } from "@/contexts/app-theme.context";
+import i18n from "@/translations";
 
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 const AnimatedImage = Animated.createAnimatedComponent(Image);
@@ -32,9 +33,14 @@ type HomeCardProps = {
 
 const cards: HomeCardProps[] = [
   {
-    title: "Subscription",
-    footer: "Manage your subscription",
+    title: i18n.t("routes.subscription.title"),
+    footer: i18n.t("routes.subscription.description"),
     path: "/subscription",
+  },
+  {
+    title: i18n.t("routes.settings.title"),
+    footer: i18n.t("routes.settings.description"),
+    path: "/settings",
   },
 ];
 

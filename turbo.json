@@ -15,6 +15,9 @@
       "persistent": true,
       "cache": false
     },
+    "prebuild": {
+      "cache": false
+    },
     "build": {
       "dependsOn": ["^build"],
       "outputs": [".next/**", ".expo/**"]
