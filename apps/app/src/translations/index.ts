@@ -8,7 +8,7 @@ import * as resources from "./resources";
 const ns = Object.keys(Object.values(resources)[0]);
 export const defaultNS = ns[0];
 
-const init = async () => {
+const init = () => {
   /**
    * @TODO: use mmkv instead of secure store
    */

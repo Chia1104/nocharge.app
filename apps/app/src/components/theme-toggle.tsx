@@ -1,4 +1,4 @@
-import { type FC } from "react";
+import { useTransition } from "react";
 
 import { Ionicons } from "@expo/vector-icons";
 import * as Haptics from "expo-haptics";
@@ -10,15 +10,19 @@ import { useAppTheme } from "@/contexts/app-theme.context";
 
 const StyledIonicons = withUniwind(Ionicons);
 
-export const ThemeToggle: FC = () => {
+export const ThemeToggle = () => {
   const { toggleTheme, isLight } = useAppTheme();
+  const [isPending, startTransition] = useTransition();
 
   return (
     <Pressable
+      disabled={isPending}
       onPress={() => {
-        if (Platform.OS === "ios") {
-          Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-        }
+        startTransition(() => {
+          if (Platform.OS === "ios") {
+            void Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+          }
+        });
         toggleTheme();
       }}
       className="px-2.5">

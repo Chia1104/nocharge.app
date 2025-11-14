@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from "react";
+import { useCallback, useMemo, useTransition } from "react";
 
 import { useLocales } from "expo-localization";
 import * as SecureStore from "expo-secure-store";
@@ -20,7 +20,9 @@ export const codeToLocale = (code: string): Locale => {
 };
 
 export const useLocale = () => {
+  const [isPending, startTransition] = useTransition();
   const locales = useLocales();
+
   const locale = useMemo(() => {
     const savedLng = SecureStore.getItem("lng");
     if (savedLng) {
@@ -28,9 +30,13 @@ export const useLocale = () => {
     }
     return codeToLocale(locales[0].languageCode ?? "en");
   }, [locales]);
+
   const setLocale = useCallback((locale: Locale) => {
-    SecureStore.setItem("lng", locale);
-    i18n.changeLanguage(locale);
+    startTransition(async () => {
+      SecureStore.setItem("lng", locale);
+      await i18n.changeLanguage(locale);
+    });
   }, []);
-  return [locale, setLocale] as const;
+
+  return [locale, setLocale, isPending] as const;
 };

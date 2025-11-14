@@ -46,7 +46,7 @@ export const LocaleSelector = () => {
     option: { value: string; label: string } | undefined
   ) => {
     if (option && isLocale(option.value)) {
-      setLocale(option.value as Locale);
+      setLocale(option.value);
     }
   };
 

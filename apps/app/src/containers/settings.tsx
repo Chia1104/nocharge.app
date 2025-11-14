@@ -25,12 +25,12 @@ const LAYOUT_TRANSITION = LinearTransition.springify()
 
 const StyledIonicons = withUniwind(Ionicons);
 
-type AccordionItem = {
+interface AccordionItem {
   id: string;
   title: string;
   content: string;
   action?: React.ReactNode;
-};
+}
 
 const classNames = {
   triggerContentContainer: "flex-row items-center flex-1 gap-3",
@@ -81,9 +81,9 @@ const CustomIndicator = () => {
   );
 };
 
-type AccordionItemProps = {
+interface AccordionItemProps {
   item: AccordionItem;
-};
+}
 
 const AccordionItemContent = ({ item }: AccordionItemProps) => {
   const themeColorSurfaceHover = useThemeColor("on-surface-hover");
@@ -142,7 +142,7 @@ export const Settings = () => {
         action: <LocaleSelector />,
       },
     ] satisfies AccordionItem[];
-  }, []);
+  }, [t, locale]);
 
   return (
     <View
@@ -151,11 +151,7 @@ export const Settings = () => {
         paddingTop: headerHeight + 20,
         paddingBottom: insets.bottom + 110,
       }}>
-      <Accordion
-        layout={LAYOUT_TRANSITION}
-        defaultValue="2"
-        isDividerVisible={false}
-        className="w-full overflow-visible">
+      <Accordion layout={LAYOUT_TRANSITION} className="w-full overflow-visible">
         {accordionData.map((item) => (
           <Accordion.Item
             key={item.id}

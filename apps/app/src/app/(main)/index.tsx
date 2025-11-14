@@ -3,7 +3,7 @@ import { useMemo } from "react";
 
 import Feather from "@expo/vector-icons/Feather";
 import { useRouter } from "expo-router";
-import { Href } from "expo-router";
+import type { Href } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { Card, cn } from "heroui-native";
 import { useTranslation } from "react-i18next";
@@ -26,11 +26,11 @@ const AnimatedView = Animated.createAnimatedComponent(View);
 
 const StyledFeather = withUniwind(Feather);
 
-type HomeCardProps = {
+interface HomeCardProps {
   title: string;
   footer: string;
   path: Href;
-};
+}
 
 const HomeCard: FC<HomeCardProps & { index: number }> = ({
   title,
@@ -69,12 +69,14 @@ const HomeCard: FC<HomeCardProps & { index: number }> = ({
           entering={FadeIn}
           className="absolute inset-0 w-full h-full">
           <AnimatedImage
+            // eslint-disable-next-line @typescript-eslint/no-require-imports
             source={require("~/assets/hero-bg-light.png")}
             className="absolute inset-0 w-full h-full"
             resizeMode="cover"
             style={rLightImageStyle}
           />
           <AnimatedImage
+            // eslint-disable-next-line @typescript-eslint/no-require-imports
             source={require("~/assets/hero-bg-dark.png")}
             className="absolute inset-0 w-full h-full"
             resizeMode="cover"

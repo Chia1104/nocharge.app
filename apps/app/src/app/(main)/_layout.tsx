@@ -41,6 +41,7 @@ export default function Layout() {
           options={{
             headerTitle: () => (
               <Image
+                // eslint-disable-next-line @typescript-eslint/no-require-imports
                 source={require("~/assets/nocharge.png")}
                 style={styles.logo}
                 resizeMode="contain"
