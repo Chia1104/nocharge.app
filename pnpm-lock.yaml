@@ -263,7 +263,7 @@ importers:
     dependencies:
       '@hono/sentry':
         specifier: ^1.2.2
-        version: 1.2.2(hono@4.10.5)
+        version: 1.2.2(hono@4.10.6)
       '@nocharge/api':
         specifier: workspace:*
         version: link:../../packages/api
@@ -281,7 +281,7 @@ importers:
         version: link:../../packages/utils
       hono:
         specifier: ^4.10.5
-        version: 4.10.5
+        version: 4.10.6
       ky:
         specifier: 'catalog:'
         version: 1.14.0
@@ -5559,8 +5559,8 @@ packages:
   hoist-non-react-statics@3.3.2:
     resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
 
-  hono@4.10.5:
-    resolution: {integrity: sha512-h/MXuTkoAK8NG1EfDp0jI1YLf6yGdDnfkebRO2pwEh5+hE3RAJFXkCsnD0vamSiARK4ZrB6MY+o3E/hCnOyHrQ==}
+  hono@4.10.6:
+    resolution: {integrity: sha512-BIdolzGpDO9MQ4nu3AUuDwHZZ+KViNm+EZ75Ae55eMXMqLVhDFqEMXxtUe9Qh8hjL+pIna/frs2j6Y2yD5Ua/g==}
     engines: {node: '>=16.9.0'}
 
   hookified@1.13.0:
@@ -10406,9 +10406,9 @@ snapshots:
 
   '@hexagon/base64@1.1.28': {}
 
-  '@hono/sentry@1.2.2(hono@4.10.5)':
+  '@hono/sentry@1.2.2(hono@4.10.6)':
     dependencies:
-      hono: 4.10.5
+      hono: 4.10.6
       toucan-js: 4.1.1
 
   '@humanfs/core@0.19.1': {}
@@ -14690,7 +14690,7 @@ snapshots:
     dependencies:
       react-is: 16.13.1
 
-  hono@4.10.5: {}
+  hono@4.10.6: {}
 
   hookified@1.13.0: {}
 
