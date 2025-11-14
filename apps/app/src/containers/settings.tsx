@@ -131,7 +131,7 @@ export const Settings = () => {
   const headerHeight = useHeaderHeight();
   const insets = useSafeAreaInsets();
   const { t } = useTranslation();
-  const locale = useLocale();
+  const [locale] = useLocale();
 
   const accordionData = useMemo(() => {
     return [

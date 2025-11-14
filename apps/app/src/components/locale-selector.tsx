@@ -6,7 +6,6 @@ import { useTranslation } from "react-i18next";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Locale, isLocale } from "@/enums/locale.enum";
-import i18n from "@/translations";
 import { useLocale } from "@/translations/utils";
 
 const Content = () => {
@@ -39,7 +38,7 @@ const Content = () => {
 
 export const LocaleSelector = () => {
   const { t } = useTranslation();
-  const locale = useLocale();
+  const [locale, setLocale] = useLocale();
   const insets = useSafeAreaInsets();
   const themeColorMuted = useThemeColor("muted");
 
@@ -47,7 +46,7 @@ export const LocaleSelector = () => {
     option: { value: string; label: string } | undefined
   ) => {
     if (option && isLocale(option.value)) {
-      i18n.changeLanguage(option.value);
+      setLocale(option.value as Locale);
     }
   };
 

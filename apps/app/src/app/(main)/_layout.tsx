@@ -1,6 +1,7 @@
 import { isLiquidGlassAvailable } from "expo-glass-effect";
 import { Stack } from "expo-router";
 import { useThemeColor } from "heroui-native";
+import { useTranslation } from "react-i18next";
 import { Image, Platform, StyleSheet, View } from "react-native";
 
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -10,6 +11,7 @@ export default function Layout() {
   const { isDark } = useAppTheme();
   const themeColorForeground = useThemeColor("foreground");
   const themeColorBackground = useThemeColor("background");
+  const { t } = useTranslation();
 
   return (
     <View className="flex-1 bg-background">
@@ -48,7 +50,11 @@ export default function Layout() {
         />
         <Stack.Screen
           name="subscription/index"
-          options={{ headerTitle: "Subscription" }}
+          options={{ headerTitle: t("routes.subscription.title") }}
+        />
+        <Stack.Screen
+          name="settings/index"
+          options={{ headerTitle: t("routes.settings.title") }}
         />
       </Stack>
     </View>

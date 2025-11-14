@@ -1,10 +1,12 @@
 import type { FC } from "react";
+import { useMemo } from "react";
 
 import Feather from "@expo/vector-icons/Feather";
 import { useRouter } from "expo-router";
 import { Href } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { Card, cn } from "heroui-native";
+import { useTranslation } from "react-i18next";
 import { Image, Pressable, View } from "react-native";
 import Animated, {
   Easing,
@@ -17,7 +19,6 @@ import { withUniwind } from "uniwind";
 
 import { ScreenScrollView } from "@/components/screen-scroll-view";
 import { useAppTheme } from "@/contexts/app-theme.context";
-import i18n from "@/translations";
 
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 const AnimatedImage = Animated.createAnimatedComponent(Image);
@@ -30,19 +31,6 @@ type HomeCardProps = {
   footer: string;
   path: Href;
 };
-
-const cards: HomeCardProps[] = [
-  {
-    title: i18n.t("routes.subscription.title"),
-    footer: i18n.t("routes.subscription.description"),
-    path: "/subscription",
-  },
-  {
-    title: i18n.t("routes.settings.title"),
-    footer: i18n.t("routes.settings.description"),
-    path: "/settings",
-  },
-];
 
 const HomeCard: FC<HomeCardProps & { index: number }> = ({
   title,
@@ -120,6 +108,22 @@ const HomeCard: FC<HomeCardProps & { index: number }> = ({
 
 export default function App() {
   const { isDark } = useAppTheme();
+  const { t } = useTranslation();
+
+  const cards = useMemo(() => {
+    return [
+      {
+        title: t("routes.subscription.title"),
+        footer: t("routes.subscription.description"),
+        path: "/subscription",
+      },
+      {
+        title: t("routes.settings.title"),
+        footer: t("routes.settings.description"),
+        path: "/settings",
+      },
+    ] satisfies HomeCardProps[];
+  }, [t]);
 
   return (
     <ScreenScrollView>
