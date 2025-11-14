@@ -1,8 +1,8 @@
 @theme {
   /* Primary Colors */
-  --color-primary: rgb(192 132 252);
-  --color-primary-light: rgb(216 180 254);
-  --color-primary-dark: rgb(192 132 252);
+  --color-primary: rgb(100, 156, 176);
+  --color-primary-light: rgb(100, 156, 176);
+  --color-primary-dark: rgb(21, 71, 87);
   --color-primary-transparent: rgba(192 132 252, 0.75);
 
   /* Secondary Colors */

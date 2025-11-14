@@ -2,6 +2,7 @@
 const path = require("node:path");
 const { getDefaultConfig } = require("expo/metro-config");
 const { FileStore } = require("metro-cache");
+const { withUniwindConfig } = require("uniwind/metro");
 
 const config = getDefaultConfig(__dirname);
 
@@ -11,4 +12,7 @@ config.cacheStores = [
   }),
 ];
 
-module.exports = config;
+module.exports = withUniwindConfig(config, {
+  cssEntryFile: "./src/styles.css",
+  dtsFile: "./uniwind-types.d.ts",
+});

@@ -5,7 +5,8 @@
     "checkJs": false,
     "moduleSuffixes": [".ios", ".android", ".native", ""],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "~/*": ["./*"]
     }
   },
   "include": ["src", "*.ts", "*.js", ".expo/types/**/*.ts", "expo-env.d.ts"],

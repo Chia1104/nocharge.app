@@ -2,8 +2,8 @@ import type { ConfigContext, ExpoConfig } from "expo/config";
 
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
-  name: "NoCharge.app",
-  slug: "nocharge.app",
+  name: "NoCharge",
+  slug: "nocharge",
   scheme: "nocharge",
   version: "0.1.0",
   orientation: "portrait",
@@ -26,7 +26,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     package: "com.nocharge.app",
     adaptiveIcon: {
       foregroundImage: "./assets/nocharge.png",
-      backgroundColor: "#1F104A",
+      backgroundColor: "#649CB0",
     },
     edgeToEdgeEnabled: true,
   },
@@ -48,10 +48,10 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     [
       "expo-splash-screen",
       {
-        backgroundColor: "#E4E4E7",
+        backgroundColor: "#649CB0",
         image: "./assets/nocharge.png",
         dark: {
-          backgroundColor: "#18181B",
+          backgroundColor: "#154757",
           image: "./assets/nocharge.png",
         },
       },
