@@ -16,7 +16,6 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { withUniwind } from "uniwind";
 
 import { LocaleSelector } from "@/components/locale-selector";
-import { useLocale } from "@/translations/utils";
 
 const LAYOUT_TRANSITION = LinearTransition.springify()
   .damping(70)
@@ -131,18 +130,17 @@ export const Settings = () => {
   const headerHeight = useHeaderHeight();
   const insets = useSafeAreaInsets();
   const { t } = useTranslation();
-  const [locale] = useLocale();
 
   const accordionData = useMemo(() => {
     return [
       {
         id: "1",
-        title: `${t("language.title")} (${t(`language.${locale}`)})`,
+        title: t("language.title"),
         content: t("language.description"),
         action: <LocaleSelector />,
       },
     ] satisfies AccordionItem[];
-  }, [t, locale]);
+  }, [t]);
 
   return (
     <View
