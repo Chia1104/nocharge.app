@@ -1,8 +1,17 @@
 {
   "$schema": "https://turborepo.org/schema.json",
+  "ui": "tui",
   "globalDependencies": ["**/.env"],
-  "pipeline": {
+  "tasks": {
     "dev": {
+      "persistent": true,
+      "cache": false
+    },
+    "dev:android": {
+      "persistent": true,
+      "cache": false
+    },
+    "dev:ios": {
       "persistent": true,
       "cache": false
     },

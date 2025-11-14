@@ -14,6 +14,8 @@
     "clean": "git clean -xdf node_modules .cache",
     "clean:workspaces": "turbo clean --parallel",
     "dev": "turbo dev --continue",
+    "dev:android": "turbo dev:android --continue",
+    "dev:ios": "turbo dev:ios --continue",
     "lint": "turbo run lint --continue -- --cache --cache-location .cache/.eslintcache",
     "lint:fix": "turbo run lint --continue -- --fix --cache --cache-location .cache/.eslintcache",
     "format": "prettier --write \"**/*.{js,cjs,mjs,ts,tsx,md,json}\" --ignore-path .gitignore",
