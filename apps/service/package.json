@@ -16,6 +16,8 @@
     "@nocharge/db": "workspace:*",
     "@nocharge/kv": "workspace:*",
     "@nocharge/utils": "workspace:*",
+    "@orpc/contract": "catalog:orpc",
+    "@orpc/server": "catalog:orpc",
     "hono": "^4.10.5",
     "ky": "catalog:",
     "lodash": "catalog:",

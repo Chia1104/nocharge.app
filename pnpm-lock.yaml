@@ -51,8 +51,21 @@ catalogs:
       version: 9.39.1
   next:
     '@next/eslint-plugin-next':
-      specifier: 16.0.1
-      version: 16.0.1
+      specifier: 16.0.3
+      version: 16.0.3
+  orpc:
+    '@orpc/client':
+      specifier: 1.11.2
+      version: 1.11.2
+    '@orpc/contract':
+      specifier: 1.11.2
+      version: 1.11.2
+    '@orpc/server':
+      specifier: 1.11.2
+      version: 1.11.2
+    '@orpc/tanstack-query':
+      specifier: 1.11.2
+      version: 1.11.2
   react:
     '@types/react':
       specifier: ^19.2.2
@@ -67,13 +80,6 @@ catalogs:
     tailwindcss:
       specifier: 4.1.17
       version: 4.1.17
-  trpc:
-    '@trpc/client':
-      specifier: 11.7.1
-      version: 11.7.1
-    '@trpc/server':
-      specifier: 11.7.1
-      version: 11.7.1
 
 importers:
 
@@ -122,21 +128,36 @@ importers:
 
   apps/app:
     dependencies:
+      '@better-auth/expo':
+        specifier: ^1.3.34
+        version: 1.3.34(better-auth@1.3.34(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(expo-constants@18.0.10)(expo-crypto@15.0.7(expo@54.0.23))(expo-linking@8.0.8)(expo-secure-store@15.0.7(expo@54.0.23))(expo-web-browser@15.0.9(expo@54.0.23)(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.2.4)(react@19.2.0)))
       '@gorhom/bottom-sheet':
         specifier: ^5.2.6
         version: 5.2.6(@types/react@19.2.4)(react-native-gesture-handler@2.28.0(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.2.4)(react@19.2.0))(react@19.2.0))(react-native-reanimated@4.1.5(@babel/core@7.28.5)(react-native-worklets@0.5.2(@babel/core@7.28.5)(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.2.4)(react@19.2.0))(react@19.2.0))(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.2.4)(react@19.2.0))(react@19.2.0))(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.2.4)(react@19.2.0))(react@19.2.0)
       '@legendapp/list':
         specifier: ^2.0.14
         version: 2.0.15(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.2.4)(react@19.2.0))(react@19.2.0)
+      '@nocharge/api':
+        specifier: workspace:*
+        version: link:../../packages/api
+      '@nocharge/auth':
+        specifier: workspace:*
+        version: link:../../packages/auth
+      '@nocharge/utils':
+        specifier: workspace:*
+        version: link:../../packages/utils
+      '@orpc/client':
+        specifier: catalog:orpc
+        version: 1.11.2
+      '@orpc/contract':
+        specifier: ^1.11.2
+        version: 1.11.2
+      '@orpc/tanstack-query':
+        specifier: catalog:orpc
+        version: 1.11.2(@orpc/client@1.11.2)(@tanstack/query-core@5.90.8)
       '@tanstack/react-query':
         specifier: 'catalog:'
         version: 5.90.8(react@19.2.0)
-      '@trpc/client':
-        specifier: catalog:trpc
-        version: 11.7.1(@trpc/server@11.7.1(typescript@5.9.3))(typescript@5.9.3)
-      '@trpc/server':
-        specifier: catalog:trpc
-        version: 11.7.1(typescript@5.9.3)
       expo:
         specifier: ~54.0.20
         version: 54.0.23(@babel/core@7.28.5)(@expo/metro-runtime@6.1.2)(expo-router@6.0.14)(graphql@16.12.0)(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.2.4)(react@19.2.0))(react@19.2.0)
@@ -279,6 +300,12 @@ importers:
       '@nocharge/utils':
         specifier: workspace:*
         version: link:../../packages/utils
+      '@orpc/contract':
+        specifier: catalog:orpc
+        version: 1.11.2
+      '@orpc/server':
+        specifier: catalog:orpc
+        version: 1.11.2(crossws@0.4.1(srvx@0.9.6))(ws@8.18.3)
       hono:
         specifier: ^4.10.5
         version: 4.10.5
@@ -328,15 +355,15 @@ importers:
       '@nocharge/utils':
         specifier: workspace:*
         version: link:../utils
+      '@orpc/contract':
+        specifier: catalog:orpc
+        version: 1.11.2
+      '@orpc/server':
+        specifier: catalog:orpc
+        version: 1.11.2(crossws@0.4.1(srvx@0.9.6))(ws@8.18.3)
       '@t3-oss/env-core':
         specifier: 'catalog:'
         version: 0.13.8(typescript@5.9.3)(zod@4.1.12)
-      '@trpc/client':
-        specifier: catalog:trpc
-        version: 11.7.1(@trpc/server@11.7.1(typescript@5.9.3))(typescript@5.9.3)
-      '@trpc/server':
-        specifier: catalog:trpc
-        version: 11.7.1(typescript@5.9.3)
       client-only:
         specifier: 'catalog:'
         version: 0.0.1
@@ -377,6 +404,9 @@ importers:
 
   packages/auth:
     dependencies:
+      '@better-auth/expo':
+        specifier: ^1.3.34
+        version: 1.3.34(better-auth@1.3.34(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(expo-constants@18.0.10)(expo-crypto@15.0.7(expo@54.0.23))(expo-linking@8.0.8)(expo-secure-store@15.0.7(expo@54.0.23))(expo-web-browser@15.0.9(expo@54.0.23)(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.2.4)(react@19.2.0)))
       '@nocharge/db':
         specifier: workspace:*
         version: link:../db
@@ -391,7 +421,7 @@ importers:
         version: 0.13.8(typescript@5.9.3)(zod@4.1.12)
       better-auth:
         specifier: ^1.3.34
-        version: 1.3.34
+        version: 1.3.34(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       client-only:
         specifier: 'catalog:'
         version: 0.0.1
@@ -572,7 +602,7 @@ importers:
         version: 9.39.1
       '@next/eslint-plugin-next':
         specifier: catalog:next
-        version: 16.0.1
+        version: 16.0.3
       '@nocharge/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
@@ -1268,6 +1298,16 @@ packages:
       jose: ^6.1.0
       kysely: ^0.28.5
       nanostores: ^1.0.1
+
+  '@better-auth/expo@1.3.34':
+    resolution: {integrity: sha512-/aWc4qg01+Nrto47U9iBS/jp7GO4OOChY0DxAo6Fn/U/QBmx/F7hcZ0DkbjzcUfWPBEpjefK97DALwf2VVgq6Q==}
+    peerDependencies:
+      better-auth: 1.3.34
+      expo-constants: '>=17.0.0'
+      expo-crypto: '>=13.0.0'
+      expo-linking: '>=7.0.0'
+      expo-secure-store: '>=14.0.0'
+      expo-web-browser: '>=14.0.0'
 
   '@better-auth/telemetry@1.3.34':
     resolution: {integrity: sha512-aQZ3wN90YMqV49diWxAMe1k7s2qb55KCsedCZne5PlgCjU4s3YtnqyjC5FEpzw2KY8l8rvR7DMAsDl13NjObKA==}
@@ -2103,8 +2143,8 @@ packages:
   '@next/env@15.5.4':
     resolution: {integrity: sha512-27SQhYp5QryzIT5uO8hq99C69eLQ7qkzkDPsk3N+GuS2XgOgoYEeOav7Pf8Tn4drECOVDsDg8oj+/DVy8qQL2A==}
 
-  '@next/eslint-plugin-next@16.0.1':
-    resolution: {integrity: sha512-g4Cqmv/gyFEXNeVB2HkqDlYKfy+YrlM2k8AVIO/YQVEPfhVruH1VA99uT1zELLnPLIeOnx8IZ6Ddso0asfTIdw==}
+  '@next/eslint-plugin-next@16.0.3':
+    resolution: {integrity: sha512-6sPWmZetzFWMsz7Dhuxsdmbu3fK+/AxKRtj7OB0/3OZAI2MHB/v2FeYh271LZ9abvnM1WIwWc/5umYjx0jo5sQ==}
 
   '@next/swc-darwin-arm64@15.5.4':
     resolution: {integrity: sha512-nopqz+Ov6uvorej8ndRX6HlxCYWCO3AHLfKK2TYvxoSB2scETOcfm/HSS3piPqc3A+MUgyHoqE6je4wnkjfrOA==}
@@ -2193,6 +2233,63 @@ packages:
   '@oclif/plugin-help@6.2.35':
     resolution: {integrity: sha512-ZMcQTsHaiCEOZIRZoynUQ+98fyM1Adoqx4LbOgYWRVKXKbavHPCZKm6F+/y0GpWscXVoeGnvJO6GIBsigrqaSA==}
     engines: {node: '>=18.0.0'}
+
+  '@orpc/client@1.11.2':
+    resolution: {integrity: sha512-Fo9rLFAPaDZkq82MZDE3+cjSwGr2u0WBPGegNNVO//vTCbABIuaEdJWvi1dCx9Es+oGIH+MW16lP5pOMmaK20Q==}
+
+  '@orpc/contract@1.11.2':
+    resolution: {integrity: sha512-NYSpoZ6KiZ5eqsbTAoB64SGXGk6Mdpk22Ju5taOpiPDOk2oZya6wtPBPdSIQ5iV7/JfkstuRptjhnlEpoDsZWw==}
+
+  '@orpc/interop@1.11.2':
+    resolution: {integrity: sha512-I10qsBOHcHltEek4DTYN3w8hl6Us3+aH1q3Yj+dqPhtA1dQ/uTDxcT4+XPnzrv4a4CflE6yDxnAREIZIdVz0BQ==}
+
+  '@orpc/server@1.11.2':
+    resolution: {integrity: sha512-3VG6K58AyxeLYLf78cCUzEoa1ntUFpNN++2E8JsYRSgCWRFg8S7pRhXyC4E+6dnzx44SZv42V8hiLR1v3OmXhg==}
+    peerDependencies:
+      crossws: '>=0.3.4'
+      ws: '>=8.18.1'
+    peerDependenciesMeta:
+      crossws:
+        optional: true
+      ws:
+        optional: true
+
+  '@orpc/shared@1.11.2':
+    resolution: {integrity: sha512-XOz4cHtxNKsMnVz7THzmwOwXYsaE55Vd4BLc2Y898ZqiWhwzj3bwLtZen9X0FdquytDBz7CBWKqgU2vmOITxew==}
+    peerDependencies:
+      '@opentelemetry/api': '>=1.9.0'
+    peerDependenciesMeta:
+      '@opentelemetry/api':
+        optional: true
+
+  '@orpc/standard-server-aws-lambda@1.11.2':
+    resolution: {integrity: sha512-6BnsGRPRwlLLRm7vigddr/VW19+pQw1iAZ9nCF6WHp2kUwKbdcF9O1ksxvvJhAW2pncyPBPjEpli8MZ1hG3oyA==}
+
+  '@orpc/standard-server-fastify@1.11.2':
+    resolution: {integrity: sha512-zxCcbQAhNCUKQuYB1LOchiHkbl0i3h19wbiY6KjAvu6cdZ74/8DJ6ARrkjCCHe/uHR5NW6u32CulO2/ohNXKVg==}
+    peerDependencies:
+      fastify: '>=5.6.1'
+    peerDependenciesMeta:
+      fastify:
+        optional: true
+
+  '@orpc/standard-server-fetch@1.11.2':
+    resolution: {integrity: sha512-FhA9oLEejd7ebqN5vxx2l3L8g5djhgVodGykwHiDSQJo0erXIZ0n5S+YpvW6fFiRe+3k8h+U6K2ERaAL5wZXxw==}
+
+  '@orpc/standard-server-node@1.11.2':
+    resolution: {integrity: sha512-Zae1WwhWfTS+1bfGx6IqHem2uuDsUMntpp+ymh+U9AlOzzCLdFtfYwScPNsuZhhuyGU9rBJpRjh1YCgeBZSanw==}
+
+  '@orpc/standard-server-peer@1.11.2':
+    resolution: {integrity: sha512-TAnhNiaNN5e6UHxdT5D1ZY8fseKDXnr3UmZidX2CghJj967f9+SLl1FFtuzJ7SO06uGBdARyV6azIoKlFpt+gA==}
+
+  '@orpc/standard-server@1.11.2':
+    resolution: {integrity: sha512-AXMNHXDgUCCfO4DCFGteCmWSrnG6FbydVBEMA0/HacGwi5oxDa3psHwEl/Zp7vRgTtHBiZsxaCfWQEjM+8e+2A==}
+
+  '@orpc/tanstack-query@1.11.2':
+    resolution: {integrity: sha512-X8GCBgDuHINIE6d8sDbifbPSKzuVgg6qGItb5geqtbyV6WRs2YolYleC91XCIW64kTTPMs3H8b/qyi8mrhQbDg==}
+    peerDependencies:
+      '@orpc/client': 1.11.2
+      '@tanstack/query-core': '>=5.80.2'
 
   '@oxc-minify/binding-android-arm64@0.96.0':
     resolution: {integrity: sha512-lzeIEMu/v6Y+La5JSesq4hvyKtKBq84cgQpKYTYM/yGuNk2tfd5Ha31hnC+mTh48lp/5vZH+WBfjVUjjINCfug==}
@@ -3318,17 +3415,6 @@ packages:
       svelte:
         optional: true
 
-  '@trpc/client@11.7.1':
-    resolution: {integrity: sha512-uOnAjElKI892/U6aQMcBHYs3x7mme3Cvv1F87ytBL56rBvs7+DyK7r43zgaXKf13+GtPEI6ex5xjVUfyDW8XcQ==}
-    peerDependencies:
-      '@trpc/server': 11.7.1
-      typescript: '>=5.7.2'
-
-  '@trpc/server@11.7.1':
-    resolution: {integrity: sha512-N3U8LNLIP4g9C7LJ/sLkjuPHwqlvE3bnspzC4DEFVdvx2+usbn70P80E3wj5cjOTLhmhRiwJCSXhlB+MHfGeCw==}
-    peerDependencies:
-      typescript: '>=5.7.2'
-
   '@tsconfig/node10@1.0.12':
     resolution: {integrity: sha512-UCYBaeFvM11aU2y3YPZ//O5Rhj+xKyzy7mvcIoAjASbigy8mHMryP5cK7dgjlz2hWxh1g5pLw084E0a/wlUSFQ==}
 
@@ -4323,6 +4409,10 @@ packages:
   convert-source-map@2.0.0:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
 
+  cookie@1.0.2:
+    resolution: {integrity: sha512-9Kr/j4O16ISv8zBBhJoi4bXOYNTkFLOqSL3UDB0njXxCXNezjeyVrJyGOWtgfs/q2km1gwBcfH8q1yEGoMYunA==}
+    engines: {node: '>=18'}
+
   copy-anything@4.0.5:
     resolution: {integrity: sha512-7Vv6asjS4gMOuILabD3l739tsaxFQmC+a7pLZm02zyvs8p977bL3zEgq3yDk5rn9B0PbYgIv++jmHcuUab4RhA==}
     engines: {node: '>=18'}
@@ -4996,6 +5086,11 @@ packages:
     peerDependencies:
       expo: '*'
       react-native: '*'
+
+  expo-crypto@15.0.7:
+    resolution: {integrity: sha512-FUo41TwwGT2e5rA45PsjezI868Ch3M6wbCZsmqTWdF/hr+HyPcrp1L//dsh/hsrsyrQdpY/U96Lu71/wXePJeg==}
+    peerDependencies:
+      expo: '*'
 
   expo-dev-client@6.0.17:
     resolution: {integrity: sha512-zVilIum3sqXFbhYhPT6TuxR3ddH/IfHL82FiOTqJUiYaTQqun1I6ogSvU1djhY1eXUYhfYIBieQNWMVjXPxMvw==}
@@ -6776,6 +6871,9 @@ packages:
     resolution: {integrity: sha512-7x81NCL719oNbsq/3mh+hVrAWmFuEYUqrq/Iw3kUzH8ReypT9QQ0BLoJS7/G9k6N81XjW4qHWtjWwe/9eLy1EQ==}
     engines: {node: '>=12'}
 
+  openapi-types@12.1.3:
+    resolution: {integrity: sha512-N4YtSYJqghVu4iek2ZUvcN/0aqH1kRDuNqzcycDxhOUpg7GdvLa2F3DgS6yBNhInhv2r/6I0Flkn7CqL8+nIcw==}
+
   optionator@0.9.4:
     resolution: {integrity: sha512-6IpQ7mKUxRcZNLIObR0hz7lxsapSSIYNZJwXPGeF0mTVqGKFIXj1DQcMoT22S3ROcLyY/rz0PWaWZ9ayWmad9g==}
     engines: {node: '>= 0.8.0'}
@@ -7216,6 +7314,10 @@ packages:
 
   queue@6.0.2:
     resolution: {integrity: sha512-iHZWu+q3IdFZFX36ro/lKBkSvfkztY5Y7HMiPlOUjhupPcG2JMfst2KKEpu5XndviX/3UhFbRngUPNKtgvtZiA==}
+
+  radash@12.1.1:
+    resolution: {integrity: sha512-h36JMxKRqrAxVD8201FrCpyeNuUY9Y5zZwujr20fFO77tpUtGa6EZzfKw/3WaiBX95fq7+MpsuMLNdSnORAwSA==}
+    engines: {node: '>=14.18.0'}
 
   range-parser@1.2.1:
     resolution: {integrity: sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg==}
@@ -7990,6 +8092,10 @@ packages:
   swap-case@1.1.2:
     resolution: {integrity: sha512-BAmWG6/bx8syfc6qXPprof3Mn5vQgf5dwdUNJhsNqU9WdPt5P+ES/wQ5bxfijy8zwZgZZHslC3iAsxsuQMCzJQ==}
 
+  tagged-tag@1.0.0:
+    resolution: {integrity: sha512-yEFYrVhod+hdNyx7g5Bnkkb0G6si8HJurOoOEgC8B/O0uXLHlaey/65KRv6cuWBNhBgHKAROVpc7QyYqE5gFng==}
+    engines: {node: '>=20'}
+
   tailwind-merge@3.4.0:
     resolution: {integrity: sha512-uSaO4gnW+b3Y2aWoWfFpX62vn2sR3skfhbjsEnaBI81WD1wBLlHZe5sWf0AqjksNdYTbGBEd0UasQMT3SNV15g==}
 
@@ -8207,6 +8313,10 @@ packages:
   type-fest@4.41.0:
     resolution: {integrity: sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA==}
     engines: {node: '>=16'}
+
+  type-fest@5.2.0:
+    resolution: {integrity: sha512-xxCJm+Bckc6kQBknN7i9fnP/xobQRsRQxR01CztFkp/h++yfVxUUcmMgfR2HttJx/dpWjS9ubVuyspJv24Q9DA==}
+    engines: {node: '>=20'}
 
   typed-array-buffer@1.0.3:
     resolution: {integrity: sha512-nAYYwfY3qnzX30IkA6AQZjVbtK6duGontcQm1WSG1MD94YLqK0515GNApXkoxKOWMusVssAHWLh9SeaoefYFGw==}
@@ -9815,6 +9925,17 @@ snapshots:
       nanostores: 1.0.1
       zod: 4.1.12
 
+  '@better-auth/expo@1.3.34(better-auth@1.3.34(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(expo-constants@18.0.10)(expo-crypto@15.0.7(expo@54.0.23))(expo-linking@8.0.8)(expo-secure-store@15.0.7(expo@54.0.23))(expo-web-browser@15.0.9(expo@54.0.23)(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.2.4)(react@19.2.0)))':
+    dependencies:
+      '@better-fetch/fetch': 1.1.18
+      better-auth: 1.3.34(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      expo-constants: 18.0.10(expo@54.0.23)(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.2.4)(react@19.2.0))
+      expo-crypto: 15.0.7(expo@54.0.23)
+      expo-linking: 8.0.8(expo@54.0.23)(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.2.4)(react@19.2.0))(react@19.2.0)
+      expo-secure-store: 15.0.7(expo@54.0.23)
+      expo-web-browser: 15.0.9(expo@54.0.23)(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.2.4)(react@19.2.0))
+      zod: 4.1.12
+
   '@better-auth/telemetry@1.3.34(better-call@1.0.19)(jose@6.1.1)(kysely@0.28.8)(nanostores@1.0.1)':
     dependencies:
       '@better-auth/core': 1.3.34(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.18)(better-call@1.0.19)(jose@6.1.1)(kysely@0.28.8)(nanostores@1.0.1)
@@ -10757,7 +10878,7 @@ snapshots:
 
   '@next/env@15.5.4': {}
 
-  '@next/eslint-plugin-next@16.0.1':
+  '@next/eslint-plugin-next@16.0.3':
     dependencies:
       fast-glob: 3.3.1
 
@@ -10862,6 +10983,104 @@ snapshots:
   '@oclif/plugin-help@6.2.35':
     dependencies:
       '@oclif/core': 4.8.0
+
+  '@orpc/client@1.11.2':
+    dependencies:
+      '@orpc/shared': 1.11.2
+      '@orpc/standard-server': 1.11.2
+      '@orpc/standard-server-fetch': 1.11.2
+      '@orpc/standard-server-peer': 1.11.2
+    transitivePeerDependencies:
+      - '@opentelemetry/api'
+
+  '@orpc/contract@1.11.2':
+    dependencies:
+      '@orpc/client': 1.11.2
+      '@orpc/shared': 1.11.2
+      '@standard-schema/spec': 1.0.0
+      openapi-types: 12.1.3
+    transitivePeerDependencies:
+      - '@opentelemetry/api'
+
+  '@orpc/interop@1.11.2': {}
+
+  '@orpc/server@1.11.2(crossws@0.4.1(srvx@0.9.6))(ws@8.18.3)':
+    dependencies:
+      '@orpc/client': 1.11.2
+      '@orpc/contract': 1.11.2
+      '@orpc/interop': 1.11.2
+      '@orpc/shared': 1.11.2
+      '@orpc/standard-server': 1.11.2
+      '@orpc/standard-server-aws-lambda': 1.11.2
+      '@orpc/standard-server-fastify': 1.11.2
+      '@orpc/standard-server-fetch': 1.11.2
+      '@orpc/standard-server-node': 1.11.2
+      '@orpc/standard-server-peer': 1.11.2
+      cookie: 1.0.2
+    optionalDependencies:
+      crossws: 0.4.1(srvx@0.9.6)
+      ws: 8.18.3
+    transitivePeerDependencies:
+      - '@opentelemetry/api'
+      - fastify
+
+  '@orpc/shared@1.11.2':
+    dependencies:
+      radash: 12.1.1
+      type-fest: 5.2.0
+
+  '@orpc/standard-server-aws-lambda@1.11.2':
+    dependencies:
+      '@orpc/shared': 1.11.2
+      '@orpc/standard-server': 1.11.2
+      '@orpc/standard-server-fetch': 1.11.2
+      '@orpc/standard-server-node': 1.11.2
+    transitivePeerDependencies:
+      - '@opentelemetry/api'
+
+  '@orpc/standard-server-fastify@1.11.2':
+    dependencies:
+      '@orpc/shared': 1.11.2
+      '@orpc/standard-server': 1.11.2
+      '@orpc/standard-server-node': 1.11.2
+    transitivePeerDependencies:
+      - '@opentelemetry/api'
+
+  '@orpc/standard-server-fetch@1.11.2':
+    dependencies:
+      '@orpc/shared': 1.11.2
+      '@orpc/standard-server': 1.11.2
+    transitivePeerDependencies:
+      - '@opentelemetry/api'
+
+  '@orpc/standard-server-node@1.11.2':
+    dependencies:
+      '@orpc/shared': 1.11.2
+      '@orpc/standard-server': 1.11.2
+      '@orpc/standard-server-fetch': 1.11.2
+    transitivePeerDependencies:
+      - '@opentelemetry/api'
+
+  '@orpc/standard-server-peer@1.11.2':
+    dependencies:
+      '@orpc/shared': 1.11.2
+      '@orpc/standard-server': 1.11.2
+    transitivePeerDependencies:
+      - '@opentelemetry/api'
+
+  '@orpc/standard-server@1.11.2':
+    dependencies:
+      '@orpc/shared': 1.11.2
+    transitivePeerDependencies:
+      - '@opentelemetry/api'
+
+  '@orpc/tanstack-query@1.11.2(@orpc/client@1.11.2)(@tanstack/query-core@5.90.8)':
+    dependencies:
+      '@orpc/client': 1.11.2
+      '@orpc/shared': 1.11.2
+      '@tanstack/query-core': 5.90.8
+    transitivePeerDependencies:
+      - '@opentelemetry/api'
 
   '@oxc-minify/binding-android-arm64@0.96.0':
     optional: true
@@ -11994,15 +12213,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@trpc/client@11.7.1(@trpc/server@11.7.1(typescript@5.9.3))(typescript@5.9.3)':
-    dependencies:
-      '@trpc/server': 11.7.1(typescript@5.9.3)
-      typescript: 5.9.3
-
-  '@trpc/server@11.7.1(typescript@5.9.3)':
-    dependencies:
-      typescript: 5.9.3
-
   '@tsconfig/node10@1.0.12': {}
 
   '@tsconfig/node12@1.0.11': {}
@@ -12933,7 +13143,7 @@ snapshots:
 
   basic-ftp@5.0.5: {}
 
-  better-auth@1.3.34:
+  better-auth@1.3.34(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
     dependencies:
       '@better-auth/core': 1.3.34(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.18)(better-call@1.0.19)(jose@6.1.1)(kysely@0.28.8)(nanostores@1.0.1)
       '@better-auth/telemetry': 1.3.34(better-call@1.0.19)(jose@6.1.1)(kysely@0.28.8)(nanostores@1.0.1)
@@ -12949,6 +13159,9 @@ snapshots:
       kysely: 0.28.8
       nanostores: 1.0.1
       zod: 4.1.12
+    optionalDependencies:
+      react: 19.2.0
+      react-dom: 19.2.0(react@19.2.0)
 
   better-call@1.0.19:
     dependencies:
@@ -13342,6 +13555,8 @@ snapshots:
       upper-case: 1.1.3
 
   convert-source-map@2.0.0: {}
+
+  cookie@1.0.2: {}
 
   copy-anything@4.0.5:
     dependencies:
@@ -14070,6 +14285,11 @@ snapshots:
       react-native: 0.81.5(@babel/core@7.28.5)(@types/react@19.2.4)(react@19.2.0)
     transitivePeerDependencies:
       - supports-color
+
+  expo-crypto@15.0.7(expo@54.0.23):
+    dependencies:
+      base64-js: 1.5.1
+      expo: 54.0.23(@babel/core@7.28.5)(@expo/metro-runtime@6.1.2)(expo-router@6.0.14)(graphql@16.12.0)(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.2.4)(react@19.2.0))(react@19.2.0)
 
   expo-dev-client@6.0.17(expo@54.0.23):
     dependencies:
@@ -16226,6 +16446,8 @@ snapshots:
       is-docker: 2.2.1
       is-wsl: 2.2.0
 
+  openapi-types@12.1.3: {}
+
   optionator@0.9.4:
     dependencies:
       deep-is: 0.1.4
@@ -16670,6 +16892,8 @@ snapshots:
   queue@6.0.2:
     dependencies:
       inherits: 2.0.4
+
+  radash@12.1.1: {}
 
   range-parser@1.2.1: {}
 
@@ -17582,6 +17806,8 @@ snapshots:
       lower-case: 1.1.4
       upper-case: 1.1.3
 
+  tagged-tag@1.0.0: {}
+
   tailwind-merge@3.4.0: {}
 
   tailwind-variants@3.1.1(tailwind-merge@3.4.0)(tailwindcss@4.1.17):
@@ -17800,6 +18026,10 @@ snapshots:
   type-fest@0.7.1: {}
 
   type-fest@4.41.0: {}
+
+  type-fest@5.2.0:
+    dependencies:
+      tagged-tag: 1.0.0
 
   typed-array-buffer@1.0.3:
     dependencies:

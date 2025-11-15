@@ -1,3 +1,4 @@
+import { expo } from "@better-auth/expo";
 import { connectDatabase } from "@nocharge/db/client";
 import * as schemas from "@nocharge/db/schema";
 import { kv } from "@nocharge/kv";
@@ -5,7 +6,7 @@ import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 
 import { env } from "./env";
-import { useSecureCookies, getCookieDomain } from "./utils";
+import { useSecureCookies, getCookieDomain, getTrustedOrigins } from "./utils";
 
 const database = await connectDatabase();
 
@@ -94,7 +95,7 @@ export const auth = betterAuth({
     },
   },
 
-  trustedOrigins: env.CORS_ALLOWED_ORIGIN
-    ? env.CORS_ALLOWED_ORIGIN.split(",")
-    : [],
+  trustedOrigins: getTrustedOrigins(env),
+
+  plugins: [expo({ disableOriginOverride: true })],
 });

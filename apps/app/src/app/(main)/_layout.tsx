@@ -1,3 +1,4 @@
+import { useQuery } from "@tanstack/react-query";
 import { isLiquidGlassAvailable } from "expo-glass-effect";
 import { Stack } from "expo-router";
 import { useThemeColor } from "heroui-native";
@@ -6,12 +7,15 @@ import { Image, Platform, StyleSheet, View } from "react-native";
 
 import { ThemeToggle } from "@/components/theme-toggle";
 import { useAppTheme } from "@/contexts/app-theme.context";
+import { orpc } from "@/libs/orpc/client";
 
 export default function Layout() {
   const { isDark } = useAppTheme();
   const themeColorForeground = useThemeColor("foreground");
   const themeColorBackground = useThemeColor("background");
   const { t } = useTranslation();
+
+  const { data } = useQuery(orpc.health.server.queryOptions());
 
   return (
     <View className="flex-1 bg-background">
@@ -36,27 +40,32 @@ export default function Layout() {
             backgroundColor: themeColorBackground,
           },
         }}>
-        <Stack.Screen
-          name="index"
-          options={{
-            headerTitle: () => (
-              <Image
-                // eslint-disable-next-line @typescript-eslint/no-require-imports
-                source={require("~/assets/nocharge.png")}
-                style={styles.logo}
-                resizeMode="contain"
-              />
-            ),
-          }}
-        />
-        <Stack.Screen
-          name="subscription/index"
-          options={{ headerTitle: t("routes.subscription.title") }}
-        />
-        <Stack.Screen
-          name="settings/index"
-          options={{ headerTitle: t("routes.settings.title") }}
-        />
+        <Stack.Protected guard={data?.status === "ok"}>
+          <Stack.Screen
+            name="index"
+            options={{
+              headerTitle: () => (
+                <Image
+                  // eslint-disable-next-line @typescript-eslint/no-require-imports
+                  source={require("~/assets/nocharge.png")}
+                  style={styles.logo}
+                  resizeMode="contain"
+                />
+              ),
+            }}
+          />
+          <Stack.Screen
+            name="subscription/index"
+            options={{ headerTitle: t("routes.subscription.title") }}
+          />
+          <Stack.Screen
+            name="settings/index"
+            options={{ headerTitle: t("routes.settings.title") }}
+          />
+        </Stack.Protected>
+        <Stack.Protected guard={data?.status !== "ok"}>
+          <Stack.Screen name="error" />
+        </Stack.Protected>
       </Stack>
     </View>
   );

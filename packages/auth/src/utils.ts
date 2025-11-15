@@ -6,6 +6,7 @@ import type { env as internalEnv } from "./env";
 export const useSecureCookies = process.env.NODE_ENV === "production";
 export const cookiePrefix = useSecureCookies ? "__Secure-" : "";
 export const DEFAULT_COOKIE_DOMAIN = ".nocharge.app";
+export const DEFAULT_TRUSTED_ORIGINS = ["https://nocharge.app", "nocharge://"];
 
 export const SESSION_MAX_AGE = 2592000; // 30 days
 export const SESSION_UPDATE_AGE = 86400; // 1 day
@@ -44,4 +45,12 @@ export const baseAuthClient = (
   return Object.assign(config ?? {}, {
     baseURL: `${getServiceEndPoint()}/auth`,
   });
+};
+
+export const getTrustedOrigins = (env?: Partial<typeof internalEnv>) => {
+  const concatOrigins = [
+    ...DEFAULT_TRUSTED_ORIGINS,
+    ...(env?.CORS_ALLOWED_ORIGIN?.split(",") ?? []),
+  ];
+  return concatOrigins.filter(Boolean).map((origin) => origin.trim());
 };

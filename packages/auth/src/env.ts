@@ -42,7 +42,7 @@ export const env = createEnv({
     GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET,
     AUTH_SECRET: process.env.AUTH_SECRET,
     AUTH_URL: process.env.AUTH_URL,
-    AUTH_COOKIE_DOMAIN: process.env.AUTH_COOKIE_DOMAIN ?? ".chia1104.dev",
+    AUTH_COOKIE_DOMAIN: process.env.AUTH_COOKIE_DOMAIN ?? ".nocharge.app",
     RESEND_API_KEY: process.env.RESEND_API_KEY ?? "re_123",
     CORS_ALLOWED_ORIGIN: process.env.CORS_ALLOWED_ORIGIN,
     CF_BYPASS_TOKEN: process.env.CF_BYPASS_TOKEN,

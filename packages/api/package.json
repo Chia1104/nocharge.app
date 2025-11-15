@@ -4,6 +4,16 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "exports": {
+    "./orpc/router": {
+      "types": "./src/orpc/router.ts",
+      "default": "./src/orpc/router.ts"
+    },
+    "./orpc/contracts": {
+      "types": "./src/orpc/router.contract.ts",
+      "default": "./src/orpc/router.contract.ts"
+    }
+  },
   "scripts": {
     "lint": "eslint",
     "lint:fix": "eslint --fix",
@@ -17,9 +27,9 @@
     "@nocharge/db": "workspace:*",
     "@nocharge/kv": "workspace:*",
     "@nocharge/utils": "workspace:*",
+    "@orpc/contract": "catalog:orpc",
+    "@orpc/server": "catalog:orpc",
     "@t3-oss/env-core": "catalog:",
-    "@trpc/client": "catalog:trpc",
-    "@trpc/server": "catalog:trpc",
     "client-only": "catalog:",
     "dayjs": "catalog:",
     "github-slugger": "^2.0.0",

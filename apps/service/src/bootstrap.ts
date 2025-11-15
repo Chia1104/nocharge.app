@@ -10,6 +10,7 @@ import { logger } from "hono/logger";
 import { env } from "@/env";
 import authRoutes from "@/routes/auth.route";
 import healthRoutes from "@/routes/health.route";
+import rpcRoutes from "@/routes/rpc.route";
 import subscriptionRoutes from "@/routes/subscription.route";
 import workflowRoutes from "@/routes/workflow.route";
 
@@ -110,6 +111,7 @@ const bootstrap = <TContext extends HonoContext>(
   app.route("/api/v1/subscription", subscriptionRoutes);
   app.route("/api/v1/workflow", workflowRoutes);
   app.route("/api/v1/health", healthRoutes);
+  app.route("/api/v1/rpc", rpcRoutes);
 
   console.log(
     `Server is running on port ${port}, go to http://localhost:${port}`
