@@ -153,8 +153,8 @@ export const getServiceEndPoint = (
   env?: string,
   options?: GetServiceEndPointOptions
 ) => {
-  // @ts-expect-error - window is not defined in the server
-  const isServer = typeof window === "undefined";
+  const isServer =
+    typeof (globalThis as { window?: unknown }).window === "undefined";
   const {
     proxyEndpoint = process.env.NEXT_PUBLIC_SERVICE_PROXY_ENDPOINT,
     version = "v1",

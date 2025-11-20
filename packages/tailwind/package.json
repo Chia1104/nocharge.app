@@ -14,12 +14,11 @@
     "./typography.css": "./typography.css"
   },
   "scripts": {
-    "clean": "git clean -xdf .turbo node_modules dist .cache",
-    "type:check": "tsc --noEmit"
+    "clean": "git clean -xdf .turbo node_modules dist .cache"
   },
   "devDependencies": {
     "@egoist/tailwindcss-icons": "^1.9.0",
-    "@iconify/json": "^2.2.405",
+    "@iconify/json": "^2.2.409",
     "@nocharge/tsconfig": "workspace:*",
     "@tailwindcss/typography": "^0.5.19",
     "tailwindcss": "catalog:tailwindcss",

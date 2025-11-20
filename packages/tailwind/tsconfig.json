@@ -1,8 +1,0 @@
-{
-  "extends": "@nocharge/tsconfig/internal-package.json",
-  "include": ["."],
-  "exclude": ["node_modules", "dist"],
-  "compilerOptions": {
-    "types": ["vitest/globals"]
-  }
-}

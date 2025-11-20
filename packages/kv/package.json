@@ -31,20 +31,20 @@
     "test:watch": "vitest"
   },
   "devDependencies": {
-    "@keyv/test-suite": "^2.1.1",
+    "@keyv/test-suite": "^2.1.2",
     "@nocharge/eslint-config": "workspace:*",
     "@nocharge/tsconfig": "workspace:*",
     "eslint": "catalog:eslint",
     "typescript": "catalog:"
   },
   "dependencies": {
-    "@keyv/postgres": "^2.1.7",
-    "@keyv/redis": "^5.1.3",
-    "@keyv/valkey": "^1.0.10",
+    "@keyv/postgres": "^2.2.1",
+    "@keyv/redis": "^5.1.4",
+    "@keyv/valkey": "^1.0.11",
     "@nocharge/utils": "workspace:*",
     "@t3-oss/env-core": "catalog:",
     "drizzle-orm": "^0.44.7",
-    "keyv": "^5.5.3",
+    "keyv": "^5.5.4",
     "zod": "catalog:"
   }
 }
