@@ -17,6 +17,7 @@ import Animated, {
 import { FadeIn } from "react-native-reanimated";
 import { withUniwind } from "uniwind";
 
+import { PieChart } from "@/components/charts/pie-chart";
 import { ScreenScrollView } from "@/components/screen-scroll-view";
 import { useAppTheme } from "@/contexts/app-theme.context";
 
@@ -136,9 +137,15 @@ export default function App() {
   return (
     <ScreenScrollView>
       <View className="gap-6 py-10">
-        {/* <HomeCard path="/subscription" index={0}>
-          <PieChart data={[{ value: 100, color: "red" }]} size={100} />
-        </HomeCard> */}
+        <HomeCard path="/subscription" index={0}>
+          <Card.Body className="flex-1 items-center justify-center py-4">
+            <PieChart
+              data={[{ value: 30 }, { value: 60 }, { value: 10 }]}
+              size={100}
+              strokeWidth={5}
+            />
+          </Card.Body>
+        </HomeCard>
         {cards.map((card, index) => (
           <HomeCard
             key={card.title}
