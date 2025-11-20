@@ -15,8 +15,7 @@ export default function Layout() {
   const themeColorBackground = useThemeColor("background");
   const { t } = useTranslation();
 
-  const { data, error } = useQuery(orpc.health.server.queryOptions());
-  console.log(error);
+  const { data } = useQuery(orpc.health.server.queryOptions());
 
   return (
     <View className="flex-1 bg-background">
