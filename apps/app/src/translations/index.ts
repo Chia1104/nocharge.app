@@ -1,7 +1,8 @@
 import { getLocales } from "expo-localization";
-import * as SecureStore from "expo-secure-store";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
+
+import { storage } from "@/utils/storage";
 
 import * as resources from "./resources";
 
@@ -9,10 +10,7 @@ const ns = Object.keys(Object.values(resources)[0]);
 export const defaultNS = ns[0];
 
 const init = () => {
-  /**
-   * @TODO: use mmkv instead of secure store
-   */
-  let savedLng = SecureStore.getItem("lng");
+  let savedLng = storage.getString("lng");
   if (!savedLng) {
     savedLng = getLocales()[0].languageCode ?? "en";
   }

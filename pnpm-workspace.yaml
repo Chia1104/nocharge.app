@@ -49,8 +49,9 @@ catalogs:
     '@tailwindcss/postcss': 4.1.17
     tailwindcss: 4.1.17
 
-linkWorkspacePackages: true
+onlyBuiltDependencies:
+  - "@shopify/react-native-skia"
 
-# nodeLinker: 'hoisted'
+linkWorkspacePackages: true
 
 strictPeerDependencies: false

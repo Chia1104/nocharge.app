@@ -1,10 +1,10 @@
 import { useCallback, useMemo, useTransition } from "react";
 
 import { useLocales } from "expo-localization";
-import * as SecureStore from "expo-secure-store";
 
 import { Locale } from "@/enums/locale.enum";
 import i18n from "@/translations";
+import { storage } from "@/utils/storage";
 
 export const codeToLocale = (code: string): Locale => {
   switch (code) {
@@ -24,7 +24,7 @@ export const useLocale = () => {
   const locales = useLocales();
 
   const locale = useMemo(() => {
-    const savedLng = SecureStore.getItem("lng");
+    const savedLng = storage.getString("lng");
     if (savedLng) {
       return codeToLocale(savedLng);
     }
@@ -33,7 +33,7 @@ export const useLocale = () => {
 
   const setLocale = useCallback((locale: Locale) => {
     startTransition(async () => {
-      SecureStore.setItem("lng", locale);
+      storage.set("lng", locale);
       await i18n.changeLanguage(locale);
     });
   }, []);

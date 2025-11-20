@@ -27,9 +27,10 @@ const AnimatedView = Animated.createAnimatedComponent(View);
 const StyledFeather = withUniwind(Feather);
 
 interface HomeCardProps {
-  title: string;
-  footer: string;
+  title?: string;
+  footer?: string;
   path: Href;
+  children?: React.ReactNode;
 }
 
 const HomeCard: FC<HomeCardProps & { index: number }> = ({
@@ -37,6 +38,7 @@ const HomeCard: FC<HomeCardProps & { index: number }> = ({
   footer,
   path,
   index,
+  children,
 }) => {
   const router = useRouter();
 
@@ -84,24 +86,28 @@ const HomeCard: FC<HomeCardProps & { index: number }> = ({
           />
         </AnimatedView>
         <View className="gap-4">
-          <Card.Body className="h-16" />
-          <Card.Footer className="px-3 pb-3 flex-row items-end gap-4">
-            <View className="flex-1">
-              <Card.Title className="text-2xl text-foreground/85">
-                {title}
-              </Card.Title>
-              <Card.Description className="text-foreground/65 pl-0.5">
-                {footer}
-              </Card.Description>
-            </View>
-            <View className="size-9 rounded-full bg-background/25 items-center justify-center">
-              <StyledFeather
-                name="arrow-up-right"
-                size={20}
-                className="text-foreground"
-              />
-            </View>
-          </Card.Footer>
+          {children ?? (
+            <>
+              <Card.Body className="h-16" />
+              <Card.Footer className="px-3 pb-3 flex-row items-end gap-4">
+                <View className="flex-1">
+                  <Card.Title className="text-2xl text-foreground/85">
+                    {title}
+                  </Card.Title>
+                  <Card.Description className="text-foreground/65 pl-0.5">
+                    {footer}
+                  </Card.Description>
+                </View>
+                <View className="size-9 rounded-full bg-background/25 items-center justify-center">
+                  <StyledFeather
+                    name="arrow-up-right"
+                    size={20}
+                    className="text-foreground"
+                  />
+                </View>
+              </Card.Footer>
+            </>
+          )}
         </View>
       </Card>
     </AnimatedPressable>
@@ -130,6 +136,9 @@ export default function App() {
   return (
     <ScreenScrollView>
       <View className="gap-6 py-10">
+        {/* <HomeCard path="/subscription" index={0}>
+          <PieChart data={[{ value: 100, color: "red" }]} size={100} />
+        </HomeCard> */}
         {cards.map((card, index) => (
           <HomeCard
             key={card.title}
