@@ -140,6 +140,7 @@ interface GetServiceEndPointOptions {
   version?: ServiceVersion;
   isInternal?: boolean;
   clientEnvPrefix?: string;
+  baseUrl?: string;
 }
 
 /**
@@ -160,7 +161,12 @@ export const getServiceEndPoint = (
     version = "v1",
     isInternal,
     clientEnvPrefix = "NEXT_PUBLIC_",
+    baseUrl,
   } = options ?? {};
+
+  if (baseUrl) {
+    return baseUrl;
+  }
 
   return switchEnv(env, {
     prod: () => {
