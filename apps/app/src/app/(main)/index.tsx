@@ -103,7 +103,7 @@ const HomeCard: FC<HomeCardProps & { index: number }> = ({
                   <StyledFeather
                     name="arrow-up-right"
                     size={20}
-                    className="text-foreground"
+                    className="text-foreground rounded-full"
                   />
                 </View>
               </Card.Footer>

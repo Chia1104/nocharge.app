@@ -6,4 +6,4 @@
 @import 'heroui-native/styles';
 @import "@nocharge/tailwind/preset.css";
 
-@source './node_modules/heroui-native/lib';
+@source '../node_modules/heroui-native/lib';

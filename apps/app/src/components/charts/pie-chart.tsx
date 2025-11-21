@@ -2,8 +2,8 @@ import { useMemo } from "react";
 
 import { Canvas, Path, PathOp, Skia } from "@shopify/react-native-skia";
 import type { SkPath } from "@shopify/react-native-skia";
-import { useThemeColor } from "heroui-native";
 import { StyleSheet, View } from "react-native";
+import { useCSSVariable } from "uniwind";
 
 export interface PieChartData {
   value: number;
@@ -47,7 +47,7 @@ export const PieChart = ({
   strokeWidth = 0,
   gap = 2,
 }: PieChartProps) => {
-  const themeColorDivider = useThemeColor("divider") as `#${string}`;
+  const themeColorDivider = useCSSVariable("--color-primary") as `#${string}`;
   const radius = size / 2;
   const innerRadius = radius * 0.65;
 
