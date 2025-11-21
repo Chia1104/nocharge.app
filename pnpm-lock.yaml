@@ -153,7 +153,7 @@ importers:
         specifier: catalog:orpc
         version: 1.11.3
       '@orpc/contract':
-        specifier: ^1.11.3
+        specifier: catalog:orpc
         version: 1.11.3
       '@orpc/tanstack-query':
         specifier: catalog:orpc
