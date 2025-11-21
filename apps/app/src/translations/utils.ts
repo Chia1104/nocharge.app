@@ -6,6 +6,10 @@ import { Locale } from "@/enums/locale.enum";
 import { kv } from "@/libs/storage/kv";
 import i18n from "@/translations";
 
+export const getLng = () => kv.getString("lng");
+
+export const setLng = (lng: string) => kv.set("lng", lng);
+
 export const codeToLocale = (code: string): Locale => {
   switch (code) {
     case Locale.en:
@@ -24,7 +28,7 @@ export const useLocale = () => {
   const locales = useLocales();
 
   const locale = useMemo(() => {
-    const savedLng = kv.getString("lng");
+    const savedLng = getLng();
     if (savedLng) {
       return codeToLocale(savedLng);
     }
@@ -33,7 +37,7 @@ export const useLocale = () => {
 
   const setLocale = useCallback((locale: Locale) => {
     startTransition(async () => {
-      kv.set("lng", locale);
+      setLng(locale);
       await i18n.changeLanguage(locale);
     });
   }, []);
