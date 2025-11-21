@@ -1,19 +1,13 @@
 import type { routerContract } from "@nocharge/api/orpc/contracts";
-import { getServiceEndPoint } from "@nocharge/utils/server";
 import { createORPCClient } from "@orpc/client";
 import { RPCLink } from "@orpc/client/fetch";
 import type { ContractRouterClient } from "@orpc/contract";
 import { createTanstackQueryUtils } from "@orpc/tanstack-query";
-import * as Device from "expo-device";
+
+import { withServiceUrl } from "@/utils/service-url";
 
 export const link = new RPCLink({
-  url: `${getServiceEndPoint(undefined, {
-    clientEnvPrefix: "EXPO_PUBLIC_",
-    baseUrl:
-      Device.osName === "Android" && __DEV__
-        ? "http://10.0.2.2:3001/api/v1"
-        : undefined,
-  })}/rpc`,
+  url: withServiceUrl("/rpc"),
   async fetch(request, init) {
     const { fetch } = await import("expo/fetch");
 

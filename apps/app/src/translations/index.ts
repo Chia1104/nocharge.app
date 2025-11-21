@@ -2,7 +2,7 @@ import { getLocales } from "expo-localization";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
-import { storage } from "@/utils/storage";
+import { kv } from "@/libs/storage/kv";
 
 import * as resources from "./resources";
 
@@ -10,7 +10,7 @@ const ns = Object.keys(Object.values(resources)[0]);
 export const defaultNS = ns[0];
 
 const init = () => {
-  let savedLng = storage.getString("lng");
+  let savedLng = kv.getString("lng");
   if (!savedLng) {
     savedLng = getLocales()[0].languageCode ?? "en";
   }

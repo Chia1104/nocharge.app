@@ -7,7 +7,7 @@ import {
   ReanimatedLogLevel,
 } from "react-native-reanimated";
 
-import { queryClient } from "@/libs/query-client";
+import { queryClient } from "@/utils/query-client";
 
 import { AppThemeProvider } from "../contexts/app-theme.context";
 
