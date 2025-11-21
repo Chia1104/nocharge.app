@@ -268,7 +268,7 @@ importers:
         version: 3.1.1(tailwind-merge@3.4.0)(tailwindcss@4.1.17)
       uniwind:
         specifier: ^1.0.2
-        version: 1.0.2(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.2.6)(react@19.2.0))(react@19.2.0)(tailwindcss@4.1.17)
+        version: 1.0.4(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.2.6)(react@19.2.0))(react@19.2.0)(tailwindcss@4.1.17)
     devDependencies:
       '@nocharge/eslint-config':
         specifier: workspace:*
@@ -8592,8 +8592,8 @@ packages:
     resolution: {integrity: sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==}
     engines: {node: '>= 10.0.0'}
 
-  uniwind@1.0.2:
-    resolution: {integrity: sha512-zwrHVVeLqopXLbhCE2IZSljvnRpwqggIpgMhbw1mR/ig5qnT7PXYFrlbl+do72EsYj54FyJSs9gxq8oFczLYWA==}
+  uniwind@1.0.4:
+    resolution: {integrity: sha512-Vfyt1LaZbafx7URgG1ZXYrKfUIP31ijcnuKncur7mYY/CTT7gt3BFGBn5jhCaLSZJgVL91t9prJ4XgikmXtUBA==}
     peerDependencies:
       react: '>=19.0.0'
       react-native: '>=0.81.0'
@@ -18856,7 +18856,7 @@ snapshots:
 
   universalify@2.0.1: {}
 
-  uniwind@1.0.2(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.2.6)(react@19.2.0))(react@19.2.0)(tailwindcss@4.1.17):
+  uniwind@1.0.4(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.2.6)(react@19.2.0))(react@19.2.0)(tailwindcss@4.1.17):
     dependencies:
       '@tailwindcss/node': 4.1.17
       '@tailwindcss/oxide': 4.1.17
