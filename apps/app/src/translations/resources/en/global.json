@@ -133,5 +133,11 @@
       "title": "Settings",
       "description": "Manage your settings"
     }
+  },
+  "home": {
+    "monthly-usage": "Monthly Usage",
+    "yearly-usage": "Yearly Usage",
+    "monthly-per-value": "{{value}}/M",
+    "yearly-per-value": "{{value}}/Y"
   }
 }

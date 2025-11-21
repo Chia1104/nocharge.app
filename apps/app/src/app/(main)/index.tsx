@@ -1,119 +1,15 @@
-import type { FC } from "react";
 import { useMemo } from "react";
 
-import Feather from "@expo/vector-icons/Feather";
-import { useRouter } from "expo-router";
-import type { Href } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import { Card, cn } from "heroui-native";
+import { Card } from "heroui-native";
 import { useTranslation } from "react-i18next";
-import { Image, Pressable, View } from "react-native";
-import Animated, {
-  Easing,
-  FadeInDown,
-  useAnimatedStyle,
-  withTiming,
-} from "react-native-reanimated";
-import { FadeIn } from "react-native-reanimated";
-import { withUniwind } from "uniwind";
+import { View } from "react-native";
 
+import { ActionCard } from "@/components/action-card";
+import type { ActionCardProps } from "@/components/action-card";
 import { PieChart } from "@/components/charts/pie-chart";
 import { ScreenScrollView } from "@/components/screen-scroll-view";
 import { useAppTheme } from "@/contexts/app-theme.context";
-
-const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
-const AnimatedImage = Animated.createAnimatedComponent(Image);
-const AnimatedView = Animated.createAnimatedComponent(View);
-
-const StyledFeather = withUniwind(Feather);
-
-interface HomeCardProps {
-  title?: string;
-  footer?: string;
-  path: Href;
-  children?: React.ReactNode;
-}
-
-const HomeCard: FC<HomeCardProps & { index: number }> = ({
-  title,
-  footer,
-  path,
-  index,
-  children,
-}) => {
-  const router = useRouter();
-
-  const { isDark } = useAppTheme();
-
-  const rLightImageStyle = useAnimatedStyle(() => {
-    return {
-      opacity: isDark ? 0 : withTiming(0.4),
-    };
-  });
-
-  const rDarkImageStyle = useAnimatedStyle(() => {
-    return {
-      opacity: isDark ? withTiming(0.4) : 0,
-    };
-  });
-
-  return (
-    <AnimatedPressable
-      entering={FadeInDown.duration(300)
-        .delay(index * 100)
-        .easing(Easing.out(Easing.ease))}
-      onPress={() => router.push(path)}>
-      <Card
-        className={cn(
-          "p-0 border border-zinc-200 rounded-3xl overflow-hidden",
-          isDark && "border-zinc-900"
-        )}>
-        <AnimatedView
-          entering={FadeIn}
-          className="absolute inset-0 w-full h-full">
-          <AnimatedImage
-            // eslint-disable-next-line @typescript-eslint/no-require-imports
-            source={require("~/assets/hero-bg-light.png")}
-            className="absolute inset-0 w-full h-full"
-            resizeMode="cover"
-            style={rLightImageStyle}
-          />
-          <AnimatedImage
-            // eslint-disable-next-line @typescript-eslint/no-require-imports
-            source={require("~/assets/hero-bg-dark.png")}
-            className="absolute inset-0 w-full h-full"
-            resizeMode="cover"
-            style={rDarkImageStyle}
-          />
-        </AnimatedView>
-        <View className="gap-4">
-          {children ?? (
-            <>
-              <Card.Body className="h-16" />
-              <Card.Footer className="px-3 pb-3 flex-row items-end gap-4">
-                <View className="flex-1">
-                  <Card.Title className="text-2xl text-foreground/85">
-                    {title}
-                  </Card.Title>
-                  <Card.Description className="text-foreground/65 pl-0.5">
-                    {footer}
-                  </Card.Description>
-                </View>
-                <View className="size-9 rounded-full bg-background/25 items-center justify-center">
-                  <StyledFeather
-                    name="arrow-up-right"
-                    size={20}
-                    className="text-foreground rounded-full"
-                  />
-                </View>
-              </Card.Footer>
-            </>
-          )}
-        </View>
-      </Card>
-    </AnimatedPressable>
-  );
-};
 
 export default function App() {
   const { isDark } = useAppTheme();
@@ -131,23 +27,31 @@ export default function App() {
         footer: t("routes.settings.description"),
         path: "/settings",
       },
-    ] satisfies HomeCardProps[];
+    ] satisfies ActionCardProps[];
   }, [t]);
 
   return (
     <ScreenScrollView>
       <View className="gap-6 py-10">
-        <HomeCard path="/subscription" index={0}>
-          <Card.Body className="flex-1 items-center justify-center py-4">
+        <ActionCard path="/subscription" index={0}>
+          <Card.Body className="flex-1 items-center justify-center pt-4 pb-10 relative">
+            <View className="absolute bottom-3 left-3 rounded-full">
+              <Card.Title className="text-2xl text-foreground/85">
+                {t("home.monthly-usage")}
+              </Card.Title>
+              <Card.Description className="text-foreground/65 pl-0.5">
+                {t("home.monthly-per-value", { value: "100 USD" })}
+              </Card.Description>
+            </View>
             <PieChart
               data={[{ value: 30 }, { value: 60 }, { value: 10 }]}
-              size={100}
-              strokeWidth={5}
+              size={200}
+              strokeWidth={10}
             />
           </Card.Body>
-        </HomeCard>
+        </ActionCard>
         {cards.map((card, index) => (
-          <HomeCard
+          <ActionCard
             key={card.title}
             title={card.title}
             footer={card.footer}

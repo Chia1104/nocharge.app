@@ -133,5 +133,11 @@
       "title": "設定",
       "description": "管理您的設定"
     }
+  },
+  "home": {
+    "monthly-usage": "每月花費",
+    "yearly-usage": "每年花費",
+    "monthly-per-value": "{{value}}/月",
+    "yearly-per-value": "{{value}}/年"
   }
 }
