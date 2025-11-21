@@ -32,7 +32,8 @@
     "db:init": "turbo run db:init --parallel",
     "db:seed": "turbo run db:seed --parallel",
     "db:studio": "turbo run db:studio --parallel",
-    "update-deps:all": "pnpm up --latest --filter '@nocharge/*' --filter service --filter app"
+    "update-deps:all": "pnpm up --latest --filter '@nocharge/*' --filter service --filter app",
+    "test": "vitest run"
   },
   "dependencies": {
     "@manypkg/cli": "^0.25.1",
