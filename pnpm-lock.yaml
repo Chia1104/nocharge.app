@@ -213,8 +213,8 @@ importers:
         specifier: ~15.0.9
         version: 15.0.9(expo@54.0.25)(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.2.6)(react@19.2.0))
       heroui-native:
-        specifier: 1.0.0-beta.2
-        version: 1.0.0-beta.2(945315d39c52d3fbaec84c703a00ffb9)
+        specifier: 1.0.0-beta.4
+        version: 1.0.0-beta.4(945315d39c52d3fbaec84c703a00ffb9)
       i18next:
         specifier: ^25.6.3
         version: 25.6.3(typescript@5.9.3)
@@ -5759,8 +5759,8 @@ packages:
   hermes-parser@0.32.0:
     resolution: {integrity: sha512-g4nBOWFpuiTqjR3LZdRxKUkij9iyveWeuks7INEsMX741f3r9xxrOe8TeQfUxtda0eXmiIFiMQzoeSQEno33Hw==}
 
-  heroui-native@1.0.0-beta.2:
-    resolution: {integrity: sha512-/wb523YeRmwQZApfDsQWbcnYcWbQjbOkx8NQnDOopp5V3t4+qtCGfGTJl/KNJdofywcz9pD1E1t7XJ2g1VtPLQ==}
+  heroui-native@1.0.0-beta.4:
+    resolution: {integrity: sha512-/2LH0Gm61Mlt29QAuz48OJ24+UXqXY25jK6NG44E0dgygDDhkI7LDu1PI8ZZUx+iDNHKUJ3obc6LVrBh0F6n8g==}
     peerDependencies:
       '@gorhom/bottom-sheet': ^5
       react: '*'
@@ -15476,7 +15476,7 @@ snapshots:
     dependencies:
       hermes-estree: 0.32.0
 
-  heroui-native@1.0.0-beta.2(945315d39c52d3fbaec84c703a00ffb9):
+  heroui-native@1.0.0-beta.4(945315d39c52d3fbaec84c703a00ffb9):
     dependencies:
       '@gorhom/bottom-sheet': 5.2.6(@types/react@19.2.6)(react-native-gesture-handler@2.29.1(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.2.6)(react@19.2.0))(react@19.2.0))(react-native-reanimated@4.1.5(@babel/core@7.28.5)(react-native-worklets@0.5.2(@babel/core@7.28.5)(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.2.6)(react@19.2.0))(react@19.2.0))(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.2.6)(react@19.2.0))(react@19.2.0))(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.2.6)(react@19.2.0))(react@19.2.0)
       react: 19.2.0
