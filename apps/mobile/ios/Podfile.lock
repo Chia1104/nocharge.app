@@ -202,8 +202,6 @@ PODS:
     - Yoga
   - ExpoAsset (12.0.10):
     - ExpoModulesCore
-  - ExpoCrypto (15.0.7):
-    - ExpoModulesCore
   - ExpoDevice (8.0.9):
     - ExpoModulesCore
   - ExpoFileSystem (19.0.19):
@@ -2304,7 +2302,6 @@ DEPENDENCIES:
   - "expo-dev-menu (from `../../../node_modules/.pnpm/expo-dev-menu@7.0.17_expo@54.0.25/node_modules/expo-dev-menu`)"
   - "expo-dev-menu-interface (from `../../../node_modules/.pnpm/expo-dev-menu-interface@2.0.0_expo@54.0.25/node_modules/expo-dev-menu-interface/ios`)"
   - "ExpoAsset (from `../../../node_modules/.pnpm/expo-asset@12.0.10_expo@54.0.25_react-native@0.81.5_@babel+core@7.28.5_@types+react@19.2.6_react@19.2.0__react@19.2.0/node_modules/expo-asset/ios`)"
-  - "ExpoCrypto (from `../../../node_modules/.pnpm/expo-crypto@15.0.7_expo@54.0.25/node_modules/expo-crypto/ios`)"
   - "ExpoDevice (from `../../../node_modules/.pnpm/expo-device@8.0.9_expo@54.0.25/node_modules/expo-device/ios`)"
   - "ExpoFileSystem (from `../../../node_modules/.pnpm/expo-file-system@19.0.19_expo@54.0.25_react-native@0.81.5_@babel+core@7.28.5_@types+react@19.2.6_react@19.2.0_/node_modules/expo-file-system/ios`)"
   - "ExpoFont (from `../../../node_modules/.pnpm/expo-font@14.0.9_expo@54.0.25_react-native@0.81.5_@babel+core@7.28.5_@types+react@19.2.6_react@19.2.0__react@19.2.0/node_modules/expo-font/ios`)"
@@ -2422,8 +2419,6 @@ EXTERNAL SOURCES:
     :path: "../../../node_modules/.pnpm/expo-dev-menu-interface@2.0.0_expo@54.0.25/node_modules/expo-dev-menu-interface/ios"
   ExpoAsset:
     :path: "../../../node_modules/.pnpm/expo-asset@12.0.10_expo@54.0.25_react-native@0.81.5_@babel+core@7.28.5_@types+react@19.2.6_react@19.2.0__react@19.2.0/node_modules/expo-asset/ios"
-  ExpoCrypto:
-    :path: "../../../node_modules/.pnpm/expo-crypto@15.0.7_expo@54.0.25/node_modules/expo-crypto/ios"
   ExpoDevice:
     :path: "../../../node_modules/.pnpm/expo-device@8.0.9_expo@54.0.25/node_modules/expo-device/ios"
   ExpoFileSystem:
@@ -2620,7 +2615,6 @@ SPEC CHECKSUMS:
   expo-dev-menu: 7b72a6130e42799659ba2cc349e35b22bcbb8aef
   expo-dev-menu-interface: 600df12ea01efecdd822daaf13cc0ac091775533
   ExpoAsset: d839c8eae8124470332408427327e8f88beb2dfd
-  ExpoCrypto: c1fbce112d1b6b79652bbe380b4fd4cc91676595
   ExpoDevice: 148accb4071873d19fba80a2506c58ffa433d620
   ExpoFileSystem: 77157a101e03150a4ea4f854b4dd44883c93ae0a
   ExpoFont: cf9d90ec1d3b97c4f513211905724c8171f82961

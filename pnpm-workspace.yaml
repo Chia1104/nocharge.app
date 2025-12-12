@@ -9,18 +9,18 @@ catalog:
   '@t3-oss/env-nextjs': ^0.13.8
   '@tanstack/react-query': ^5.90.10
   '@types/lodash': ^4.17.20
-  '@types/node': 24.10.1
+  '@types/node': 25.0.1
   bun-types: ^1.3.2
   client-only: ^0.0.1
   dayjs: ^1.11.19
-  graphql-request: ^7.3.4
-  ky: ^1.14.0
+  graphql-request: ^7.3.5
+  ky: ^1.14.1
   lodash: ^4.17.21
   server-only: ^0.0.1
-  superjson: 2.2.5
+  superjson: 2.2.6
   tsdown: ^0.16.1
   typescript: ^5.9.3
-  zod: ^4.1.12
+  zod: ^4.1.13
 
 catalogs:
   chiastack:
@@ -39,8 +39,8 @@ catalogs:
     next: 16.0.3
   orpc:
     '@orpc/client': 1.11.3
-    '@orpc/contract': 1.11.3
-    '@orpc/server': 1.11.3
+    '@orpc/contract': 1.12.2
+    '@orpc/server': 1.12.2
     '@orpc/tanstack-query': 1.11.3
   react:
     '@types/react': ^19.2.6
@@ -50,11 +50,11 @@ catalogs:
     react-dom: ^19.2.0
   tailwindcss:
     '@tailwindcss/postcss': 4.1.17
-    tailwindcss: 4.1.17
-
-onlyBuiltDependencies:
-  - "@shopify/react-native-skia"
+    tailwindcss: 4.1.18
 
 linkWorkspacePackages: true
+
+onlyBuiltDependencies:
+  - '@shopify/react-native-skia'
 
 strictPeerDependencies: false

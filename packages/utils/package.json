@@ -43,7 +43,7 @@
   "devDependencies": {
     "@chiastack/eslint": "catalog:chiastack",
     "@chiastack/tsconfig": "catalog:chiastack",
-    "@types/express": "^5.0.5",
+    "@types/express": "^5.0.6",
     "eslint": "catalog:eslint",
     "typescript": "catalog:"
   }

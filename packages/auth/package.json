@@ -41,15 +41,15 @@
     "auth-schema:generate": "SKIP_ENV_VALIDATION=1 pnpm dlx @better-auth/cli generate --config src/index.ts"
   },
   "dependencies": {
-    "@better-auth/expo": "^1.3.34",
+    "@better-auth/expo": "^1.4.6",
     "@nocharge/db": "workspace:*",
     "@nocharge/kv": "workspace:*",
     "@nocharge/utils": "workspace:*",
     "@t3-oss/env-core": "catalog:",
-    "better-auth": "^1.3.34",
+    "better-auth": "^1.4.6",
     "client-only": "catalog:",
     "dayjs": "catalog:",
-    "resend": "^6.5.2",
+    "resend": "^6.6.0",
     "server-only": "catalog:",
     "zod": "catalog:"
   },
