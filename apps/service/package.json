@@ -27,8 +27,8 @@
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@nocharge/eslint-config": "workspace:*",
-    "@nocharge/tsconfig": "workspace:*",
+    "@chiastack/eslint": "catalog:chiastack",
+    "@chiastack/tsconfig": "catalog:chiastack",
     "@types/node": "catalog:",
     "eslint": "catalog:eslint",
     "typescript": "catalog:"

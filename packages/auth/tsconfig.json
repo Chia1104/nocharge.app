@@ -1,5 +1,5 @@
 {
-  "extends": "@nocharge/tsconfig/base.json",
+  "extends": "@chiastack/tsconfig/base.json",
   "compilerOptions": {
     "types": ["vitest/globals"],
     "lib": ["ES2022", "dom", "dom.iterable"],

@@ -32,7 +32,7 @@ export const useLocale = () => {
     if (savedLng) {
       return codeToLocale(savedLng);
     }
-    return codeToLocale(locales[0].languageCode ?? "en");
+    return codeToLocale(locales?.[0]?.languageCode ?? "en");
   }, [locales]);
 
   const setLocale = useCallback((locale: Locale) => {

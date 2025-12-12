@@ -1,4 +1,4 @@
-import { baseConfig } from "@nocharge/eslint-config/base";
+import { baseConfig } from "@chiastack/eslint/base";
 import type { Linter } from "eslint";
 import { defineConfig } from "eslint/config";
 

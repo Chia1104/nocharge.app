@@ -1,5 +1,5 @@
 {
-  "extends": ["@nocharge/tsconfig/base.json"],
+  "extends": ["@chiastack/tsconfig/base.json"],
   "compilerOptions": {
     "jsx": "react-native",
     "checkJs": false,

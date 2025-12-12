@@ -44,8 +44,8 @@
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@nocharge/eslint-config": "workspace:*",
-    "@nocharge/tsconfig": "workspace:*",
+    "@chiastack/eslint": "catalog:chiastack",
+    "@chiastack/tsconfig": "catalog:chiastack",
     "@nocharge/utils": "workspace:*",
     "@types/pg": "^8.15.6",
     "drizzle-kit": "^0.31.7",
