@@ -1,8 +1,12 @@
 PODS:
+  - EXApplication (7.0.8):
+    - ExpoModulesCore
   - EXConstants (18.0.11):
     - ExpoModulesCore
   - EXJSONUtils (0.15.0)
   - EXManifests (1.0.10):
+    - ExpoModulesCore
+  - EXNotifications (0.32.14):
     - ExpoModulesCore
   - Expo (54.0.28):
     - ExpoModulesCore
@@ -202,6 +206,8 @@ PODS:
     - Yoga
   - ExpoAsset (12.0.11):
     - ExpoModulesCore
+  - ExpoCrypto (15.0.8):
+    - ExpoModulesCore
   - ExpoDevice (8.0.10):
     - ExpoModulesCore
   - ExpoFileSystem (19.0.20):
@@ -246,6 +252,8 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
+  - ExpoNetwork (8.0.8):
+    - ExpoModulesCore
   - ExpoSecureStore (15.0.8):
     - ExpoModulesCore
   - ExpoSplashScreen (31.0.12):
@@ -254,6 +262,9 @@ PODS:
     - ExpoModulesCore
   - ExpoWebBrowser (15.0.10):
     - ExpoModulesCore
+  - EXTaskManager (14.0.9):
+    - ExpoModulesCore
+    - UMAppLoader
   - EXUpdatesInterface (2.0.0):
     - ExpoModulesCore
   - FBLazyVector (0.81.5)
@@ -2290,18 +2301,22 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
+  - UMAppLoader (6.0.8)
   - Yoga (0.0.0)
 
 DEPENDENCIES:
+  - "EXApplication (from `../../../node_modules/.pnpm/expo-application@7.0.8_expo@54.0.28/node_modules/expo-application/ios`)"
   - "EXConstants (from `../../../node_modules/.pnpm/expo-constants@18.0.11_expo@54.0.28_react-native@0.81.5_@babel+core@7.28.5_@types+react@19.2.7_react@19.2.3_/node_modules/expo-constants/ios`)"
   - "EXJSONUtils (from `../../../node_modules/.pnpm/expo-json-utils@0.15.0/node_modules/expo-json-utils/ios`)"
   - "EXManifests (from `../../../node_modules/.pnpm/expo-manifests@1.0.10_expo@54.0.28/node_modules/expo-manifests/ios`)"
+  - "EXNotifications (from `../../../node_modules/.pnpm/expo-notifications@0.32.14_expo@54.0.28_react-native@0.81.5_@babel+core@7.28.5_@types+r_582df7762590a62b79497743d24acaa2/node_modules/expo-notifications/ios`)"
   - "Expo (from `../../../node_modules/.pnpm/expo@54.0.28_@babel+core@7.28.5_@expo+metro-runtime@6.1.2_expo-router@6.0.18_graphql@16_a1b5be3031fe449a8660288e850a7e22/node_modules/expo`)"
   - "expo-dev-client (from `../../../node_modules/.pnpm/expo-dev-client@6.0.20_expo@54.0.28/node_modules/expo-dev-client/ios`)"
   - "expo-dev-launcher (from `../../../node_modules/.pnpm/expo-dev-launcher@6.0.20_expo@54.0.28/node_modules/expo-dev-launcher`)"
   - "expo-dev-menu (from `../../../node_modules/.pnpm/expo-dev-menu@7.0.18_expo@54.0.28/node_modules/expo-dev-menu`)"
   - "expo-dev-menu-interface (from `../../../node_modules/.pnpm/expo-dev-menu-interface@2.0.0_expo@54.0.28/node_modules/expo-dev-menu-interface/ios`)"
   - "ExpoAsset (from `../../../node_modules/.pnpm/expo-asset@12.0.11_expo@54.0.28_react-native@0.81.5_@babel+core@7.28.5_@types+react@19.2.7_react@19.2.3__react@19.2.3/node_modules/expo-asset/ios`)"
+  - "ExpoCrypto (from `../../../node_modules/.pnpm/expo-crypto@15.0.8_expo@54.0.28/node_modules/expo-crypto/ios`)"
   - "ExpoDevice (from `../../../node_modules/.pnpm/expo-device@8.0.10_expo@54.0.28/node_modules/expo-device/ios`)"
   - "ExpoFileSystem (from `../../../node_modules/.pnpm/expo-file-system@19.0.20_expo@54.0.28_react-native@0.81.5_@babel+core@7.28.5_@types+react@19.2.7_react@19.2.3_/node_modules/expo-file-system/ios`)"
   - "ExpoFont (from `../../../node_modules/.pnpm/expo-font@14.0.10_expo@54.0.28_react-native@0.81.5_@babel+core@7.28.5_@types+react@19.2.7_react@19.2.3__react@19.2.3/node_modules/expo-font/ios`)"
@@ -2313,10 +2328,12 @@ DEPENDENCIES:
   - "ExpoLinking (from `../../../node_modules/.pnpm/expo-linking@8.0.10_expo@54.0.28_react-native@0.81.5_@babel+core@7.28.5_@types+react@19.2.7_react@19.2.3__react@19.2.3/node_modules/expo-linking/ios`)"
   - "ExpoLocalization (from `../../../node_modules/.pnpm/expo-localization@17.0.8_expo@54.0.28_react@19.2.3/node_modules/expo-localization/ios`)"
   - "ExpoModulesCore (from `../../../node_modules/.pnpm/expo-modules-core@3.0.28_react-native@0.81.5_@babel+core@7.28.5_@types+react@19.2.7_react@19.2.3__react@19.2.3/node_modules/expo-modules-core`)"
+  - "ExpoNetwork (from `../../../node_modules/.pnpm/expo-network@8.0.8_expo@54.0.28_react@19.2.3/node_modules/expo-network/ios`)"
   - "ExpoSecureStore (from `../../../node_modules/.pnpm/expo-secure-store@15.0.8_expo@54.0.28/node_modules/expo-secure-store/ios`)"
   - "ExpoSplashScreen (from `../../../node_modules/.pnpm/expo-splash-screen@31.0.12_expo@54.0.28/node_modules/expo-splash-screen/ios`)"
   - "ExpoSystemUI (from `../../../node_modules/.pnpm/expo-system-ui@6.0.9_expo@54.0.28_react-native@0.81.5_@babel+core@7.28.5_@types+react@19.2.7_react@19.2.3_/node_modules/expo-system-ui/ios`)"
   - "ExpoWebBrowser (from `../../../node_modules/.pnpm/expo-web-browser@15.0.10_expo@54.0.28_react-native@0.81.5_@babel+core@7.28.5_@types+react@19.2.7_react@19.2.3_/node_modules/expo-web-browser/ios`)"
+  - "EXTaskManager (from `../../../node_modules/.pnpm/expo-task-manager@14.0.9_expo@54.0.28_react-native@0.81.5_@babel+core@7.28.5_@types+react@19.2.7_react@19.2.3_/node_modules/expo-task-manager/ios`)"
   - "EXUpdatesInterface (from `../../../node_modules/.pnpm/expo-updates-interface@2.0.0_expo@54.0.28/node_modules/expo-updates-interface/ios`)"
   - "FBLazyVector (from `../../../node_modules/.pnpm/react-native@0.81.5_@babel+core@7.28.5_@types+react@19.2.7_react@19.2.3/node_modules/react-native/Libraries/FBLazyVector`)"
   - "hermes-engine (from `../../../node_modules/.pnpm/react-native@0.81.5_@babel+core@7.28.5_@types+react@19.2.7_react@19.2.3/node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec`)"
@@ -2394,6 +2411,7 @@ DEPENDENCIES:
   - "RNScreens (from `../../../node_modules/.pnpm/react-native-screens@4.16.0_react-native@0.81.5_@babel+core@7.28.5_@types+react@19.2.7_react@19.2.3__react@19.2.3/node_modules/react-native-screens`)"
   - "RNSVG (from `../../../node_modules/.pnpm/react-native-svg@15.15.1_react-native@0.81.5_@babel+core@7.28.5_@types+react@19.2.7_react@19.2.3__react@19.2.3/node_modules/react-native-svg`)"
   - "RNWorklets (from `../../../node_modules/.pnpm/react-native-worklets@0.5.2_@babel+core@7.28.5_react-native@0.81.5_@babel+core@7.28.5_@_aa64c07da833e8442515a8200a059677/node_modules/react-native-worklets`)"
+  - "UMAppLoader (from `../../../node_modules/.pnpm/unimodules-app-loader@6.0.8/node_modules/unimodules-app-loader/ios`)"
   - "Yoga (from `../../../node_modules/.pnpm/react-native@0.81.5_@babel+core@7.28.5_@types+react@19.2.7_react@19.2.3/node_modules/react-native/ReactCommon/yoga`)"
 
 SPEC REPOS:
@@ -2401,12 +2419,16 @@ SPEC REPOS:
     - MMKVCore
 
 EXTERNAL SOURCES:
+  EXApplication:
+    :path: "../../../node_modules/.pnpm/expo-application@7.0.8_expo@54.0.28/node_modules/expo-application/ios"
   EXConstants:
     :path: "../../../node_modules/.pnpm/expo-constants@18.0.11_expo@54.0.28_react-native@0.81.5_@babel+core@7.28.5_@types+react@19.2.7_react@19.2.3_/node_modules/expo-constants/ios"
   EXJSONUtils:
     :path: "../../../node_modules/.pnpm/expo-json-utils@0.15.0/node_modules/expo-json-utils/ios"
   EXManifests:
     :path: "../../../node_modules/.pnpm/expo-manifests@1.0.10_expo@54.0.28/node_modules/expo-manifests/ios"
+  EXNotifications:
+    :path: "../../../node_modules/.pnpm/expo-notifications@0.32.14_expo@54.0.28_react-native@0.81.5_@babel+core@7.28.5_@types+r_582df7762590a62b79497743d24acaa2/node_modules/expo-notifications/ios"
   Expo:
     :path: "../../../node_modules/.pnpm/expo@54.0.28_@babel+core@7.28.5_@expo+metro-runtime@6.1.2_expo-router@6.0.18_graphql@16_a1b5be3031fe449a8660288e850a7e22/node_modules/expo"
   expo-dev-client:
@@ -2419,6 +2441,8 @@ EXTERNAL SOURCES:
     :path: "../../../node_modules/.pnpm/expo-dev-menu-interface@2.0.0_expo@54.0.28/node_modules/expo-dev-menu-interface/ios"
   ExpoAsset:
     :path: "../../../node_modules/.pnpm/expo-asset@12.0.11_expo@54.0.28_react-native@0.81.5_@babel+core@7.28.5_@types+react@19.2.7_react@19.2.3__react@19.2.3/node_modules/expo-asset/ios"
+  ExpoCrypto:
+    :path: "../../../node_modules/.pnpm/expo-crypto@15.0.8_expo@54.0.28/node_modules/expo-crypto/ios"
   ExpoDevice:
     :path: "../../../node_modules/.pnpm/expo-device@8.0.10_expo@54.0.28/node_modules/expo-device/ios"
   ExpoFileSystem:
@@ -2441,6 +2465,8 @@ EXTERNAL SOURCES:
     :path: "../../../node_modules/.pnpm/expo-localization@17.0.8_expo@54.0.28_react@19.2.3/node_modules/expo-localization/ios"
   ExpoModulesCore:
     :path: "../../../node_modules/.pnpm/expo-modules-core@3.0.28_react-native@0.81.5_@babel+core@7.28.5_@types+react@19.2.7_react@19.2.3__react@19.2.3/node_modules/expo-modules-core"
+  ExpoNetwork:
+    :path: "../../../node_modules/.pnpm/expo-network@8.0.8_expo@54.0.28_react@19.2.3/node_modules/expo-network/ios"
   ExpoSecureStore:
     :path: "../../../node_modules/.pnpm/expo-secure-store@15.0.8_expo@54.0.28/node_modules/expo-secure-store/ios"
   ExpoSplashScreen:
@@ -2449,6 +2475,8 @@ EXTERNAL SOURCES:
     :path: "../../../node_modules/.pnpm/expo-system-ui@6.0.9_expo@54.0.28_react-native@0.81.5_@babel+core@7.28.5_@types+react@19.2.7_react@19.2.3_/node_modules/expo-system-ui/ios"
   ExpoWebBrowser:
     :path: "../../../node_modules/.pnpm/expo-web-browser@15.0.10_expo@54.0.28_react-native@0.81.5_@babel+core@7.28.5_@types+react@19.2.7_react@19.2.3_/node_modules/expo-web-browser/ios"
+  EXTaskManager:
+    :path: "../../../node_modules/.pnpm/expo-task-manager@14.0.9_expo@54.0.28_react-native@0.81.5_@babel+core@7.28.5_@types+react@19.2.7_react@19.2.3_/node_modules/expo-task-manager/ios"
   EXUpdatesInterface:
     :path: "../../../node_modules/.pnpm/expo-updates-interface@2.0.0_expo@54.0.28/node_modules/expo-updates-interface/ios"
   FBLazyVector:
@@ -2602,19 +2630,24 @@ EXTERNAL SOURCES:
     :path: "../../../node_modules/.pnpm/react-native-svg@15.15.1_react-native@0.81.5_@babel+core@7.28.5_@types+react@19.2.7_react@19.2.3__react@19.2.3/node_modules/react-native-svg"
   RNWorklets:
     :path: "../../../node_modules/.pnpm/react-native-worklets@0.5.2_@babel+core@7.28.5_react-native@0.81.5_@babel+core@7.28.5_@_aa64c07da833e8442515a8200a059677/node_modules/react-native-worklets"
+  UMAppLoader:
+    :path: "../../../node_modules/.pnpm/unimodules-app-loader@6.0.8/node_modules/unimodules-app-loader/ios"
   Yoga:
     :path: "../../../node_modules/.pnpm/react-native@0.81.5_@babel+core@7.28.5_@types+react@19.2.7_react@19.2.3/node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
+  EXApplication: 1e98d4b1dccdf30627f92917f4b2c5a53c330e5f
   EXConstants: c378c1b344ff1ecfbad27b90f0e48d1d0ead8cbb
   EXJSONUtils: 1d3e4590438c3ee593684186007028a14b3686cd
   EXManifests: a8d97683e5c7a3b026ffbd58559c64dc655b747b
+  EXNotifications: 52c982ff8aa4ed971534e27f20dbf532aa4082b1
   Expo: e502d1f8830a34019d835f182fdce94fdba458c2
   expo-dev-client: 425ee077d6754a98cfe3a2e2410d29b440b24c9d
   expo-dev-launcher: a4f4cdef064ab1fb8621e5b8c7c457cd6e9568c3
   expo-dev-menu: 05b18812110c175814c6af0d09dd658abcc5e00d
   expo-dev-menu-interface: 600df12ea01efecdd822daaf13cc0ac091775533
   ExpoAsset: 23a958e97d3d340919fe6774db35d563241e6c03
+  ExpoCrypto: b6105ebaa15d6b38a811e71e43b52cd934945322
   ExpoDevice: 6327c3c200816795708885adf540d26ecab83d1a
   ExpoFileSystem: 3592defb5faa3c5866a2900eae87ceec8cc0489f
   ExpoFont: 35ac6191ed86bbf56b3ebd2d9154eda9fad5b509
@@ -2626,10 +2659,12 @@ SPEC CHECKSUMS:
   ExpoLinking: f4c4a351523da72a6bfa7e1f4ca92aee1043a3ca
   ExpoLocalization: d9168d5300a5b03e5e78b986124d11fb6ec3ebbd
   ExpoModulesCore: ded694f230d03c59d919efe243911622fa169834
+  ExpoNetwork: ee1fb67b0de59ab7f36794caf8242955dd8ae046
   ExpoSecureStore: d32f751874a2ceb5aaeebeb3578e165c1ba2b24a
   ExpoSplashScreen: 76af87337650d06926aa7d0157fe98b4fddca336
   ExpoSystemUI: 2ad325f361a2fcd96a464e8574e19935c461c9cc
   ExpoWebBrowser: 17b064c621789e41d4816c95c93f429b84971f52
+  EXTaskManager: 6f1a66e4c8cc6df6e24c3d90928704bc3013eae5
   EXUpdatesInterface: 5adf50cb41e079c861da6d9b4b954c3db9a50734
   FBLazyVector: e95a291ad2dadb88e42b06e0c5fb8262de53ec12
   hermes-engine: 9f4dfe93326146a1c99eb535b1cb0b857a3cd172
@@ -2707,6 +2742,7 @@ SPEC CHECKSUMS:
   RNScreens: d8d6f1792f6e7ac12b0190d33d8d390efc0c1845
   RNSVG: cf9ae78f2edf2988242c71a6392d15ff7dd62522
   RNWorklets: c6640732e86b15bb9d9b033048e60afae474c635
+  UMAppLoader: 145337733539f9af9b3dd97eeaa7f3bd97cacb23
   Yoga: 5934998fbeaef7845dbf698f698518695ab4cd1a
 
 PODFILE CHECKSUM: 8c9877a79699c23c4b156aead3e14ad66358a5e7

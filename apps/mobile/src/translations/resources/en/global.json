@@ -139,5 +139,31 @@
     "yearly-usage": "Yearly Usage",
     "monthly-per-value": "{{value}}/M",
     "yearly-per-value": "{{value}}/Y"
+  },
+  "auth": {
+    "login": "Login",
+    "login-description": "Please enter your credentials to sign in",
+    "signup": "Sign Up",
+    "signup-description": "Create a new account to get started",
+    "name": "Name",
+    "name-placeholder": "Enter your name",
+    "name-too-short": "Name must be at least 2 characters",
+    "email": "Email",
+    "email-placeholder": "Enter your email",
+    "password": "Password",
+    "password-placeholder": "Enter your password",
+    "password-too-short": "Password must be at least 6 characters",
+    "signing-in": "Signing in...",
+    "signing-up": "Signing up...",
+    "login-failed": "Login failed, please check your credentials",
+    "signup-failed": "Sign up failed, please try again later",
+    "signup-success": "Sign up successful",
+    "signup-success-description": "Welcome! You have successfully signed up",
+    "or": "Or",
+    "sign-in-with-github": "Sign in with GitHub",
+    "sign-in-with-google": "Sign in with Google",
+    "sign-up-with-github": "Sign up with GitHub",
+    "sign-up-with-google": "Sign up with Google",
+    "sign-up": "Sign Up"
   }
 }

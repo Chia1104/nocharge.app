@@ -1,18 +1,38 @@
 import { useMemo } from "react";
 
-import { StatusBar } from "expo-status-bar";
-import { Card } from "heroui-native";
+import { useRouter } from "expo-router";
+import { Card, Button } from "heroui-native";
 import { useTranslation } from "react-i18next";
 import { View } from "react-native";
 
 import { ActionCard } from "@/components/action-card";
 import type { ActionCardProps } from "@/components/action-card";
 import { PieChart } from "@/components/charts/pie-chart";
-import { ScreenScrollView } from "@/components/screen-scroll-view";
-import { useAppTheme } from "@/contexts/app-theme.context";
+import { PageLayout } from "@/components/page-layout";
+import { authClient } from "@/libs/auth/client";
+
+const LoginSession = () => {
+  const router = useRouter();
+  const { t } = useTranslation();
+  const { data: session, isPending } = authClient.useSession();
+
+  if (isPending || !!session) {
+    return null;
+  }
+
+  return (
+    <View className="flex-1 items-center justify-center">
+      <Button
+        onPress={() => router.push("/(auth)/signin")}
+        variant="tertiary"
+        className="w-full">
+        {t("auth.login")}
+      </Button>
+    </View>
+  );
+};
 
 export default function App() {
-  const { isDark } = useAppTheme();
   const { t } = useTranslation();
 
   const cards = useMemo(() => {
@@ -31,8 +51,9 @@ export default function App() {
   }, [t]);
 
   return (
-    <ScreenScrollView>
+    <PageLayout>
       <View className="gap-6 py-10">
+        <LoginSession />
         <ActionCard path="/subscription" index={0}>
           <Card.Body className="flex-1 items-center justify-center pt-4 pb-10 relative">
             <View className="absolute bottom-3 left-3 rounded-full">
@@ -60,7 +81,6 @@ export default function App() {
           />
         ))}
       </View>
-      <StatusBar style={isDark ? "light" : "dark"} />
-    </ScreenScrollView>
+    </PageLayout>
   );
 }

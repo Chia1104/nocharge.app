@@ -10,7 +10,10 @@ if (!process.env.DATABASE_URL) {
 }
 
 const dbEnv = (
-  env = process.env.VERCEL_ENV ?? process.env.ENV ?? process.env.NODE_ENV
+  env = process.env.VERCEL_ENV ??
+    process.env.ENV ??
+    process.env.NODE_ENV ??
+    "development"
 ) => {
   switch (env) {
     case "production":

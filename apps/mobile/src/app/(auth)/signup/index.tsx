@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-import AntDesign from "@expo/vector-icons/AntDesign";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "expo-router";
 import { Button, Card, Spinner, TextField, useToast } from "heroui-native";
@@ -10,18 +9,20 @@ import { View, Text, KeyboardAvoidingView, Platform } from "react-native";
 import * as z from "zod";
 
 import { PageLayout } from "@/components/page-layout";
-import { useAppTheme } from "@/contexts/app-theme.context";
 import { authClient } from "@/libs/auth/client";
 
-const SignInPage = () => {
+const SignUpPage = () => {
   const { t } = useTranslation();
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
-  const { isDark } = useAppTheme();
   const { toast } = useToast();
 
-  const createSignInSchema = () =>
+  const createSignUpSchema = () =>
     z.object({
+      name: z
+        .string()
+        .min(1, t("validation.required"))
+        .min(2, t("auth.name-too-short")),
       email: z.email(t("validation.pattern.email")),
       password: z
         .string()
@@ -29,12 +30,13 @@ const SignInPage = () => {
         .min(6, t("auth.password-too-short")),
     });
 
-  const signInSchema = createSignInSchema();
-  type SignInFormData = z.infer<typeof signInSchema>;
+  const signUpSchema = createSignUpSchema();
+  type SignUpFormData = z.infer<typeof signUpSchema>;
 
-  const form = useForm<SignInFormData>({
-    resolver: zodResolver(signInSchema),
+  const form = useForm<SignUpFormData>({
+    resolver: zodResolver(signUpSchema),
     defaultValues: {
+      name: "",
       email: "",
       password: "",
     },
@@ -44,10 +46,11 @@ const SignInPage = () => {
     setIsLoading(true);
 
     try {
-      const result = await authClient.signIn.email({
+      const result = await authClient.signUp.email({
         email: data.email.trim(),
         password: data.password,
-        callbackURL: "",
+        name: data.name.trim(),
+        callbackURL: "/(auth)/signin",
       });
 
       if (result.error) {
@@ -60,48 +63,23 @@ const SignInPage = () => {
       }
 
       if (result.data) {
-        router.replace("/");
+        toast.show({
+          label: t("auth.signup-success"),
+          description: t("auth.signup-success-description"),
+          variant: "success",
+        });
+        router.replace("/(auth)/signin");
       }
     } catch {
       toast.show({
         label: t("error.title"),
-        description: t("auth.login-failed"),
+        description: t("auth.signup-failed"),
         variant: "danger",
       });
     } finally {
       setIsLoading(false);
     }
   });
-
-  const handleSocialSignIn = async (provider: "github" | "google") => {
-    setIsLoading(true);
-    try {
-      const result = await authClient.signIn.social({
-        provider,
-        callbackURL: "",
-      });
-
-      if (result.error) {
-        toast.show({
-          label: t("error.title"),
-          description: result.error.message,
-          variant: "danger",
-        });
-      }
-
-      if (result.data) {
-        router.replace("/");
-      }
-    } catch {
-      toast.show({
-        label: t("error.title"),
-        description: t("auth.login-failed"),
-        variant: "danger",
-      });
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   return (
     <PageLayout>
@@ -111,10 +89,37 @@ const SignInPage = () => {
         <View className="flex-1 justify-center py-10">
           <Card className="w-full p-5">
             <Card.Header className="pb-4">
-              <Card.Title className="text-2xl">{t("auth.login")}</Card.Title>
-              <Card.Description>{t("auth.login-description")}</Card.Description>
+              <Card.Title className="text-2xl">{t("auth.signup")}</Card.Title>
+              <Card.Description>
+                {t("auth.signup-description")}
+              </Card.Description>
             </Card.Header>
             <Card.Body className="gap-4">
+              <View className="gap-2">
+                <Controller
+                  control={form.control}
+                  name="name"
+                  render={({
+                    field: { onChange, onBlur, value },
+                    formState: { errors },
+                  }) => (
+                    <TextField isInvalid={!!errors.name} isRequired>
+                      <TextField.Label>{t("auth.name")}</TextField.Label>
+                      <TextField.Input
+                        placeholder={t("auth.name-placeholder")}
+                        value={value}
+                        onChangeText={onChange}
+                        onBlur={onBlur}
+                        autoCapitalize="words"
+                      />
+                      <TextField.ErrorMessage>
+                        {errors.name?.message}
+                      </TextField.ErrorMessage>
+                    </TextField>
+                  )}
+                />
+              </View>
+
               <View className="gap-2">
                 <Controller
                   control={form.control}
@@ -173,61 +178,13 @@ const SignInPage = () => {
                 {isLoading ? (
                   <View className="flex-row items-center gap-2">
                     <Spinner size="sm" color="current" />
-                    <Text>{t("auth.signing-in")}</Text>
+                    <Text>{t("auth.signing-up")}</Text>
                   </View>
                 ) : (
-                  <Text>{t("auth.login")}</Text>
+                  <Text>{t("auth.signup")}</Text>
                 )}
               </Button>
             </Card.Body>
-
-            <Card.Footer className="flex-col gap-3 pt-4">
-              <View className="flex-row items-center gap-2">
-                <View className="h-px flex-1 bg-divider" />
-                <Text className="text-sm text-foreground/50">
-                  {t("auth.or")}
-                </Text>
-                <View className="h-px flex-1 bg-divider" />
-              </View>
-
-              <View className="w-full gap-4">
-                <Button
-                  onPress={() => handleSocialSignIn("github")}
-                  isDisabled={isLoading}
-                  variant="tertiary"
-                  className="w-full">
-                  <AntDesign
-                    name="github"
-                    size={24}
-                    color={isDark ? "white" : "black"}
-                  />
-                  <Button.Label>{t("auth.sign-in-with-github")}</Button.Label>
-                </Button>
-                <Button
-                  onPress={() => handleSocialSignIn("google")}
-                  isDisabled={isLoading}
-                  variant="tertiary"
-                  className="w-full">
-                  <AntDesign
-                    name="google"
-                    size={24}
-                    color={isDark ? "white" : "black"}
-                  />
-                  <Button.Label>{t("auth.sign-in-with-google")}</Button.Label>
-                </Button>
-              </View>
-              <Button
-                onPress={() => router.push("/(auth)/signup")}
-                variant="ghost"
-                className="w-full flex items-center">
-                <Button.Label>{t("auth.sign-up")}</Button.Label>
-                <AntDesign
-                  name="arrow-right"
-                  size={16}
-                  color={isDark ? "white" : "black"}
-                />
-              </Button>
-            </Card.Footer>
           </Card>
         </View>
       </KeyboardAvoidingView>
@@ -235,4 +192,4 @@ const SignInPage = () => {
   );
 };
 
-export default SignInPage;
+export default SignUpPage;

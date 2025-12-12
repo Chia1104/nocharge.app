@@ -135,7 +135,7 @@ function switchServiceVersion(version: ServiceVersion, url: string) {
 
 type ServiceVersion = "v1";
 
-interface GetServiceEndPointOptions {
+export interface GetServiceEndPointOptions {
   proxyEndpoint?: string;
   version?: ServiceVersion;
   isInternal?: boolean;

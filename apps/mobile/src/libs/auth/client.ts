@@ -13,4 +13,7 @@ export const authClient = createAuthClient({
       storage: SecureStore,
     }),
   ],
+  serviceOptions: {
+    clientEnvPrefix: "EXPO_PUBLIC_",
+  },
 });

@@ -19,6 +19,7 @@
     "@better-auth/expo": "^1.4.6",
     "@expo/vector-icons": "^15.0.3",
     "@gorhom/bottom-sheet": "^5.2.8",
+    "@hookform/resolvers": "^5.2.2",
     "@legendapp/list": "^2.0.16",
     "@nocharge/api": "workspace:*",
     "@nocharge/auth": "workspace:*",
@@ -39,6 +40,7 @@
     "expo-linear-gradient": "^15.0.8",
     "expo-linking": "~8.0.10",
     "expo-localization": "^17.0.8",
+    "expo-network": "~8.0.8",
     "expo-notifications": "~0.32.14",
     "expo-router": "~6.0.18",
     "expo-secure-store": "~15.0.8",
@@ -51,6 +53,7 @@
     "i18next": "^25.7.2",
     "react": "catalog:react",
     "react-dom": "catalog:react",
+    "react-hook-form": "^7.68.0",
     "react-i18next": "^16.4.1",
     "react-native": "0.81.5",
     "react-native-css": "3.0.1",
@@ -66,6 +69,7 @@
     "tailwind-merge": "^3.4.0",
     "tailwind-variants": "^3.2.2",
     "uniwind": "^1.2.2",
+    "zod": "catalog:",
     "zustand": "^5.0.9"
   },
   "devDependencies": {
