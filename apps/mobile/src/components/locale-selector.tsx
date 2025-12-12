@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Locale, isLocale } from "@/enums/locale.enum";
-import { useLocale } from "@/translations/utils";
+import { useLocale } from "@/hooks/use-locale";
 
 const Content = () => {
   const { t } = useTranslation();

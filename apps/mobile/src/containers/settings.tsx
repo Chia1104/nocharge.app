@@ -2,7 +2,7 @@ import { useMemo } from "react";
 
 import { Ionicons } from "@expo/vector-icons";
 import { useHeaderHeight } from "@react-navigation/elements";
-import { Accordion, cn, useAccordionItem, useThemeColor } from "heroui-native";
+import { Accordion, cn, useAccordionItem } from "heroui-native";
 import { useTranslation } from "react-i18next";
 import { StyleSheet, View, Text } from "react-native";
 import Animated, {
@@ -85,8 +85,6 @@ interface AccordionItemProps {
 }
 
 const AccordionItemContent = ({ item }: AccordionItemProps) => {
-  const themeColorSurfaceHover = useThemeColor("on-surface-hover");
-
   return (
     <Animated.View
       layout={LAYOUT_TRANSITION}
@@ -106,10 +104,7 @@ const AccordionItemContent = ({ item }: AccordionItemProps) => {
       <Animated.View
         layout={LAYOUT_TRANSITION}
         className={cn("bg-surface overflow-hidden rounded-2xl")}>
-        <Accordion.Trigger
-          className="p-5"
-          highlightOpacity={0.25}
-          highlightColor={themeColorSurfaceHover}>
+        <Accordion.Trigger className="p-5">
           <View className={classNames.triggerContentContainer}>
             <Text className={classNames.triggerTitle}>{item.title}</Text>
           </View>
@@ -149,7 +144,7 @@ export const Settings = () => {
         paddingTop: headerHeight + 20,
         paddingBottom: insets.bottom + 110,
       }}>
-      <Accordion layout={LAYOUT_TRANSITION} className="w-full overflow-visible">
+      <Accordion className="w-full overflow-visible">
         {accordionData.map((item) => (
           <Accordion.Item
             key={item.id}
