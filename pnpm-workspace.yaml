@@ -49,7 +49,7 @@ catalogs:
     react: ^19.2.3
     react-dom: ^19.2.3
   tailwindcss:
-    '@tailwindcss/postcss': 4.1.17
+    '@tailwindcss/postcss': 4.1.18
     tailwindcss: 4.1.18
 
 linkWorkspacePackages: true
