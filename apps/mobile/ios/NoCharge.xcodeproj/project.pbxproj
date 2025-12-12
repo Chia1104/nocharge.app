@@ -9,27 +9,27 @@
 /* Begin PBXBuildFile section */
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
-		41D887BDE545BA1D91A8112D /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA7F1A10FF71C138AA06C5 /* ExpoModulesProvider.swift */; };
-		4AB01881E5641F01D8606121 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 310027754435F7C117DCEFD1 /* PrivacyInfo.xcprivacy */; };
-		8A400AD64FE073B042F8FD19 /* libPods-NoCharge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB49300E65E070DD251AD82 /* libPods-NoCharge.a */; };
+		4802FDCB9EA52BE4F5A5310E /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 5C5E3F45B631B81449C942DE /* PrivacyInfo.xcprivacy */; };
+		59265F3FCE5966F7FCAA44DD /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7770A396B5B1C5460EC05E2 /* ExpoModulesProvider.swift */; };
+		8CA8A0743B4EEAACA2F5E370 /* libPods-NoCharge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E10B0BF9FEA043050FE373A6 /* libPods-NoCharge.a */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
 		F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11748412D0307B40044C1D9 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0172D430E3BBFFB3313A4064 /* Pods-NoCharge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoCharge.release.xcconfig"; path = "Target Support Files/Pods-NoCharge/Pods-NoCharge.release.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* NoCharge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoCharge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = NoCharge/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = NoCharge/Info.plist; sourceTree = "<group>"; };
-		310027754435F7C117DCEFD1 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = NoCharge/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		4BB49300E65E070DD251AD82 /* libPods-NoCharge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NoCharge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		52A4CBB49E2AFDFA140B30C6 /* Pods-NoCharge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoCharge.debug.xcconfig"; path = "Target Support Files/Pods-NoCharge/Pods-NoCharge.debug.xcconfig"; sourceTree = "<group>"; };
-		52FA7F1A10FF71C138AA06C5 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-NoCharge/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		34E58D0C744F5A515332A8A4 /* Pods-NoCharge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoCharge.release.xcconfig"; path = "Target Support Files/Pods-NoCharge/Pods-NoCharge.release.xcconfig"; sourceTree = "<group>"; };
+		3B13638D47A9997AAC74F5CC /* Pods-NoCharge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoCharge.debug.xcconfig"; path = "Target Support Files/Pods-NoCharge/Pods-NoCharge.debug.xcconfig"; sourceTree = "<group>"; };
+		5C5E3F45B631B81449C942DE /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = NoCharge/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = NoCharge/SplashScreen.storyboard; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
+		E10B0BF9FEA043050FE373A6 /* libPods-NoCharge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NoCharge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F11748412D0307B40044C1D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = NoCharge/AppDelegate.swift; sourceTree = "<group>"; };
 		F11748442D0722820044C1D9 /* NoCharge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NoCharge-Bridging-Header.h"; path = "NoCharge/NoCharge-Bridging-Header.h"; sourceTree = "<group>"; };
+		F7770A396B5B1C5460EC05E2 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-NoCharge/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A400AD64FE073B042F8FD19 /* libPods-NoCharge.a in Frameworks */,
+				8CA8A0743B4EEAACA2F5E370 /* libPods-NoCharge.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,36 +53,26 @@
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */,
-				310027754435F7C117DCEFD1 /* PrivacyInfo.xcprivacy */,
+				5C5E3F45B631B81449C942DE /* PrivacyInfo.xcprivacy */,
 			);
 			name = NoCharge;
+			sourceTree = "<group>";
+		};
+		2B378327979EECEB006420BE /* ExpoModulesProviders */ = {
+			isa = PBXGroup;
+			children = (
+				EC2679AB4FE3F5319F9EBEE4 /* NoCharge */,
+			);
+			name = ExpoModulesProviders;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				4BB49300E65E070DD251AD82 /* libPods-NoCharge.a */,
+				E10B0BF9FEA043050FE373A6 /* libPods-NoCharge.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		31216A6AA1F48719E7F72A13 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				52A4CBB49E2AFDFA140B30C6 /* Pods-NoCharge.debug.xcconfig */,
-				0172D430E3BBFFB3313A4064 /* Pods-NoCharge.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		407564AC679D0579C262672F /* ExpoModulesProviders */ = {
-			isa = PBXGroup;
-			children = (
-				F6614E90D216C618BBB375A5 /* NoCharge */,
-			);
-			name = ExpoModulesProviders;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -99,8 +89,8 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				31216A6AA1F48719E7F72A13 /* Pods */,
-				407564AC679D0579C262672F /* ExpoModulesProviders */,
+				BFA3CDEAA63CC70CBF3C7E22 /* Pods */,
+				2B378327979EECEB006420BE /* ExpoModulesProviders */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -124,10 +114,20 @@
 			path = NoCharge/Supporting;
 			sourceTree = "<group>";
 		};
-		F6614E90D216C618BBB375A5 /* NoCharge */ = {
+		BFA3CDEAA63CC70CBF3C7E22 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				52FA7F1A10FF71C138AA06C5 /* ExpoModulesProvider.swift */,
+				3B13638D47A9997AAC74F5CC /* Pods-NoCharge.debug.xcconfig */,
+				34E58D0C744F5A515332A8A4 /* Pods-NoCharge.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EC2679AB4FE3F5319F9EBEE4 /* NoCharge */ = {
+			isa = PBXGroup;
+			children = (
+				F7770A396B5B1C5460EC05E2 /* ExpoModulesProvider.swift */,
 			);
 			name = NoCharge;
 			sourceTree = "<group>";
@@ -140,13 +140,13 @@
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "NoCharge" */;
 			buildPhases = (
 				08A4A3CD28434E44B6B9DE2E /* [CP] Check Pods Manifest.lock */,
-				B47F7A91F365F84EF215A44E /* [Expo] Configure project */,
+				3355CE2D5DC50E94FEBFCA47 /* [Expo] Configure project */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */,
-				E76079106F04838ACFDDBD05 /* [CP] Embed Pods Frameworks */,
+				7680A862FF2BDC0670BEE6D6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,7 +196,7 @@
 				BB2F792D24A3F905000567C9 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
-				4AB01881E5641F01D8606121 /* PrivacyInfo.xcprivacy in Resources */,
+				4802FDCB9EA52BE4F5A5310E /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +242,52 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3355CE2D5DC50E94FEBFCA47 /* [Expo] Configure project */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/.xcode.env",
+				"$(SRCROOT)/.xcode.env.local",
+				"$(SRCROOT)/NoCharge/NoCharge.entitlements",
+				"$(SRCROOT)/Pods/Target Support Files/Pods-NoCharge/expo-configure-project.sh",
+			);
+			name = "[Expo] Configure project";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/Pods/Target Support Files/Pods-NoCharge/ExpoModulesProvider.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-NoCharge/expo-configure-project.sh\"\n";
+		};
+		7680A862FF2BDC0670BEE6D6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NoCharge/Pods-NoCharge-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/React-Core-prebuilt/React.framework/React",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/ReactNativeDependencies/ReactNativeDependencies.framework/ReactNativeDependencies",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/Pre-built/hermes.framework/hermes",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/React.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactNativeDependencies.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NoCharge/Pods-NoCharge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -280,52 +326,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NoCharge/Pods-NoCharge-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B47F7A91F365F84EF215A44E /* [Expo] Configure project */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/.xcode.env",
-				"$(SRCROOT)/.xcode.env.local",
-				"$(SRCROOT)/NoCharge/NoCharge.entitlements",
-				"$(SRCROOT)/Pods/Target Support Files/Pods-NoCharge/expo-configure-project.sh",
-			);
-			name = "[Expo] Configure project";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(SRCROOT)/Pods/Target Support Files/Pods-NoCharge/ExpoModulesProvider.swift",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-NoCharge/expo-configure-project.sh\"\n";
-		};
-		E76079106F04838ACFDDBD05 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NoCharge/Pods-NoCharge-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/React-Core-prebuilt/React.framework/React",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/ReactNativeDependencies/ReactNativeDependencies.framework/ReactNativeDependencies",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/Pre-built/hermes.framework/hermes",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/React.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactNativeDependencies.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NoCharge/Pods-NoCharge-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -334,7 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */,
-				41D887BDE545BA1D91A8112D /* ExpoModulesProvider.swift in Sources */,
+				59265F3FCE5966F7FCAA44DD /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,7 +343,7 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52A4CBB49E2AFDFA140B30C6 /* Pods-NoCharge.debug.xcconfig */;
+			baseConfigurationReference = 3B13638D47A9997AAC74F5CC /* Pods-NoCharge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -379,7 +379,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0172D430E3BBFFB3313A4064 /* Pods-NoCharge.release.xcconfig */;
+			baseConfigurationReference = 34E58D0C744F5A515332A8A4 /* Pods-NoCharge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -462,7 +462,7 @@
 				LIBRARY_SEARCH_PATHS = "$(SDKROOT)/usr/lib/swift\"$(inherited)\"";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				REACT_NATIVE_PATH = "${PODS_ROOT}/../../../../node_modules/.pnpm/react-native@0.81.5_@babel+core@7.28.5_@types+react@19.2.6_react@19.2.0/node_modules/react-native";
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../../../node_modules/.pnpm/react-native@0.81.5_@babel+core@7.28.5_@types+react@19.2.7_react@19.2.3/node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 				SWIFT_ENABLE_EXPLICIT_MODULES = NO;
@@ -517,7 +517,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(SDKROOT)/usr/lib/swift\"$(inherited)\"";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				REACT_NATIVE_PATH = "${PODS_ROOT}/../../../../node_modules/.pnpm/react-native@0.81.5_@babel+core@7.28.5_@types+react@19.2.6_react@19.2.0/node_modules/react-native";
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../../../node_modules/.pnpm/react-native@0.81.5_@babel+core@7.28.5_@types+react@19.2.7_react@19.2.3/node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ENABLE_EXPLICIT_MODULES = NO;
 				USE_HERMES = true;
