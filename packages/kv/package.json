@@ -31,20 +31,20 @@
     "test:watch": "vitest"
   },
   "devDependencies": {
+    "@chiastack/eslint": "catalog:chiastack",
+    "@chiastack/tsconfig": "catalog:chiastack",
     "@keyv/test-suite": "^2.1.2",
-    "@nocharge/eslint-config": "workspace:*",
-    "@nocharge/tsconfig": "workspace:*",
     "eslint": "catalog:eslint",
     "typescript": "catalog:"
   },
   "dependencies": {
-    "@keyv/postgres": "^2.2.1",
-    "@keyv/redis": "^5.1.4",
+    "@keyv/postgres": "^2.2.2",
+    "@keyv/redis": "^5.1.5",
     "@keyv/valkey": "^1.0.11",
     "@nocharge/utils": "workspace:*",
     "@t3-oss/env-core": "catalog:",
-    "drizzle-orm": "^0.44.7",
-    "keyv": "^5.5.4",
+    "drizzle-orm": "^0.45.1",
+    "keyv": "^5.5.5",
     "zod": "catalog:"
   }
 }
