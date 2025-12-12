@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "mobile",
   "private": true,
   "main": "index.ts",
   "scripts": {
