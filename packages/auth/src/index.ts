@@ -50,10 +50,7 @@ export const auth = betterAuth({
    */
   database: drizzleAdapter(database, {
     provider: "pg",
-    schema: {
-      ...schemas,
-      user: schemas.users,
-    },
+    schema: schemas,
   }),
 
   secondaryStorage: {
@@ -97,5 +94,9 @@ export const auth = betterAuth({
 
   trustedOrigins: getTrustedOrigins(env),
 
-  plugins: [expo({ disableOriginOverride: true })],
+  emailAndPassword: {
+    enabled: true,
+  },
+
+  plugins: [expo()],
 });

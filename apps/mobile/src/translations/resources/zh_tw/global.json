@@ -139,5 +139,31 @@
     "yearly-usage": "每年花費",
     "monthly-per-value": "{{value}}/月",
     "yearly-per-value": "{{value}}/年"
+  },
+  "auth": {
+    "login": "登入",
+    "login-description": "請輸入您的帳號資訊以登入",
+    "signup": "註冊",
+    "signup-description": "建立新帳號以開始使用",
+    "name": "姓名",
+    "name-placeholder": "請輸入您的姓名",
+    "name-too-short": "姓名長度至少需要 2 個字元",
+    "email": "電子郵件",
+    "email-placeholder": "請輸入電子郵件",
+    "password": "密碼",
+    "password-placeholder": "請輸入密碼",
+    "password-too-short": "密碼長度至少需要 6 個字元",
+    "signing-in": "登入中...",
+    "signing-up": "註冊中...",
+    "login-failed": "登入失敗，請檢查您的帳號資訊",
+    "signup-failed": "註冊失敗，請稍後再試",
+    "signup-success": "註冊成功",
+    "signup-success-description": "歡迎加入！您已成功註冊",
+    "or": "或",
+    "sign-in-with-github": "使用 GitHub 登入",
+    "sign-in-with-google": "使用 Google 登入",
+    "sign-up-with-github": "使用 GitHub 註冊",
+    "sign-up-with-google": "使用 Google 註冊",
+    "sign-up": "註冊"
   }
 }

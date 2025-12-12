@@ -54,6 +54,8 @@ const bootstrap = <TContext extends HonoContext>(
   app.use(
     cors({
       origin: getCORSAllowedOrigin(),
+      allowHeaders: ["Content-Type", "Authorization"],
+      exposeHeaders: ["Content-Length"],
       credentials: true,
     })
   );

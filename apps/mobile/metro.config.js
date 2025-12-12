@@ -12,6 +12,8 @@ config.cacheStores = [
   }),
 ];
 
+config.resolver.unstable_enablePackageExports = true;
+
 module.exports = withUniwindConfig(config, {
   cssEntryFile: "./src/styles.css",
   dtsFile: "./uniwind-types.d.ts",
