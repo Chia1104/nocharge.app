@@ -1,8 +1,17 @@
-import { useMemo } from "react";
+import { useMemo, useCallback } from "react";
 
 import { Ionicons } from "@expo/vector-icons";
 import { useHeaderHeight } from "@react-navigation/elements";
-import { Accordion, cn, useAccordionItem } from "heroui-native";
+import { useRouter } from "expo-router";
+import {
+  Accordion,
+  Button,
+  cn,
+  useAccordionItem,
+  useToast,
+  Card,
+  Avatar,
+} from "heroui-native";
 import { useTranslation } from "react-i18next";
 import { StyleSheet, View, Text } from "react-native";
 import Animated, {
@@ -15,7 +24,10 @@ import Animated, {
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { withUniwind } from "uniwind";
 
+import { AuthGuard } from "@/components/auth-guard";
 import { LocaleSelector } from "@/components/locale-selector";
+import { authClient } from "@/libs/auth/client";
+import type { Session } from "@/libs/auth/client";
 
 const LAYOUT_TRANSITION = LinearTransition.springify()
   .damping(70)
@@ -121,10 +133,31 @@ const AccordionItemContent = ({ item }: AccordionItemProps) => {
   );
 };
 
+const PersonalInformation = ({ session }: { session: Session }) => {
+  return (
+    <Card>
+      <Card.Header className="flex-row items-center gap-3">
+        <Avatar alt={session.user.name}>
+          <Avatar.Image src={session.user.image ?? undefined} />
+          <Avatar.Fallback>{session.user.name.charAt(0)}</Avatar.Fallback>
+        </Avatar>
+        <View className="flex-1">
+          <Card.Title>{session.user.name}</Card.Title>
+          <Card.Description className="text-sm">
+            {session.user.email}
+          </Card.Description>
+        </View>
+      </Card.Header>
+    </Card>
+  );
+};
+
 export const Settings = () => {
   const headerHeight = useHeaderHeight();
   const insets = useSafeAreaInsets();
   const { t } = useTranslation();
+  const router = useRouter();
+  const { toast } = useToast();
 
   const accordionData = useMemo(() => {
     return [
@@ -137,6 +170,23 @@ export const Settings = () => {
     ] satisfies AccordionItem[];
   }, [t]);
 
+  const handleLogout = useCallback(async () => {
+    await authClient.signOut({
+      fetchOptions: {
+        onSuccess: () => {
+          router.replace("/signin");
+        },
+        onError: () => {
+          toast.show({
+            label: t("error.title"),
+            description: t("auth.logout-failed"),
+            variant: "danger",
+          });
+        },
+      },
+    });
+  }, [router, t, toast]);
+
   return (
     <View
       className="flex-1 justify-between px-5"
@@ -144,16 +194,26 @@ export const Settings = () => {
         paddingTop: headerHeight + 20,
         paddingBottom: insets.bottom + 110,
       }}>
-      <Accordion className="w-full overflow-visible">
-        {accordionData.map((item) => (
-          <Accordion.Item
-            key={item.id}
-            value={item.id}
-            className="overflow-visible">
-            <AccordionItemContent item={item} />
-          </Accordion.Item>
-        ))}
-      </Accordion>
+      <View className="flex-1 gap-4">
+        <AuthGuard disableRedirect>
+          {(session) => <PersonalInformation session={session} />}
+        </AuthGuard>
+        <Accordion className="w-full overflow-visible">
+          {accordionData.map((item) => (
+            <Accordion.Item
+              key={item.id}
+              value={item.id}
+              className="overflow-visible">
+              <AccordionItemContent item={item} />
+            </Accordion.Item>
+          ))}
+        </Accordion>
+      </View>
+      <AuthGuard disableRedirect>
+        <Button onPress={handleLogout} variant="danger-soft">
+          {t("auth.logout")}
+        </Button>
+      </AuthGuard>
     </View>
   );
 };

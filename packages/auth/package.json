@@ -9,11 +9,6 @@
       "types": "./src/index.ts",
       "default": "./src/index.ts"
     },
-    "./client": {
-      "types": "./src/client.ts",
-      "react-server": "./src/client.rsc.ts",
-      "default": "./src/client.ts"
-    },
     "./utils": {
       "types": "./src/utils.ts",
       "default": "./src/utils.ts"
@@ -41,12 +36,12 @@
     "auth-schema:generate": "SKIP_ENV_VALIDATION=1 pnpm dlx @better-auth/cli generate --config src/index.ts"
   },
   "dependencies": {
-    "@better-auth/expo": "^1.4.6",
+    "@better-auth/expo": "catalog:auth",
     "@nocharge/db": "workspace:*",
     "@nocharge/kv": "workspace:*",
     "@nocharge/utils": "workspace:*",
     "@t3-oss/env-core": "catalog:",
-    "better-auth": "^1.4.6",
+    "better-auth": "catalog:auth",
     "client-only": "catalog:",
     "dayjs": "catalog:",
     "resend": "^6.6.0",

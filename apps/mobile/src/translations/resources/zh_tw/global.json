@@ -164,6 +164,8 @@
     "sign-in-with-google": "使用 Google 登入",
     "sign-up-with-github": "使用 GitHub 註冊",
     "sign-up-with-google": "使用 Google 註冊",
-    "sign-up": "註冊"
+    "sign-up": "註冊",
+    "logout": "登出",
+    "logout-failed": "登出失敗，請稍後再試"
   }
 }

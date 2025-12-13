@@ -16,7 +16,7 @@
     "ios": "expo run:ios"
   },
   "dependencies": {
-    "@better-auth/expo": "^1.4.6",
+    "@better-auth/expo": "catalog:auth",
     "@expo/vector-icons": "^15.0.3",
     "@gorhom/bottom-sheet": "^5.2.8",
     "@hookform/resolvers": "^5.2.2",
@@ -29,7 +29,8 @@
     "@orpc/tanstack-query": "catalog:orpc",
     "@react-navigation/elements": "^2.9.2",
     "@shopify/react-native-skia": "^2.4.7",
-    "@tanstack/react-query": "catalog:",
+    "@tanstack/react-query": "catalog:tanstack",
+    "better-auth": "catalog:auth",
     "expo": "~54.0.28",
     "expo-constants": "~18.0.11",
     "expo-crypto": "~15.0.8",

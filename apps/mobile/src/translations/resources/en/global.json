@@ -164,6 +164,8 @@
     "sign-in-with-google": "Sign in with Google",
     "sign-up-with-github": "Sign up with GitHub",
     "sign-up-with-google": "Sign up with Google",
-    "sign-up": "Sign Up"
+    "sign-up": "Sign Up",
+    "logout": "Logout",
+    "logout-failed": "Logout failed, please try again later"
   }
 }

@@ -7,6 +7,7 @@ import { Image, Platform, StyleSheet, View } from "react-native";
 
 import { ThemeToggle } from "@/components/theme-toggle";
 import { useAppTheme } from "@/contexts/app-theme.context";
+import { authClient } from "@/libs/auth/client";
 import { orpc } from "@/libs/orpc/client";
 
 export default function Layout() {
@@ -15,7 +16,8 @@ export default function Layout() {
   const themeColorBackground = useThemeColor("background");
   const { t } = useTranslation();
 
-  const { data } = useQuery(orpc.health.server.queryOptions());
+  const { error: serverError } = useQuery(orpc.health.server.queryOptions());
+  const { data: session } = authClient.useSession();
 
   return (
     <View className="flex-1 bg-background">
@@ -40,7 +42,7 @@ export default function Layout() {
             backgroundColor: themeColorBackground,
           },
         }}>
-        <Stack.Protected guard={data?.status === "ok"}>
+        <Stack.Protected guard={!serverError}>
           <Stack.Screen
             name="index"
             options={{
@@ -55,15 +57,27 @@ export default function Layout() {
             }}
           />
           <Stack.Screen
-            name="subscription/index"
-            options={{ headerTitle: t("routes.subscription.title") }}
-          />
-          <Stack.Screen
             name="settings/index"
             options={{ headerTitle: t("routes.settings.title") }}
           />
+          <Stack.Protected guard={!!session}>
+            <Stack.Screen
+              name="subscription/index"
+              options={{ headerTitle: t("routes.subscription.title") }}
+            />
+          </Stack.Protected>
+          <Stack.Protected guard={!session}>
+            <Stack.Screen
+              name="signin/index"
+              options={{ headerTitle: t("auth.login") }}
+            />
+            <Stack.Screen
+              name="signup/index"
+              options={{ headerTitle: t("auth.signup") }}
+            />
+          </Stack.Protected>
         </Stack.Protected>
-        <Stack.Protected guard={data?.status !== "ok"}>
+        <Stack.Protected guard={!!serverError}>
           <Stack.Screen name="error" />
         </Stack.Protected>
       </Stack>

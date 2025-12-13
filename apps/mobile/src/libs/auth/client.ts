@@ -1,5 +1,5 @@
 import { expoClient } from "@better-auth/expo/client";
-import { createAuthClient } from "@nocharge/auth/client";
+import { createAuthClient } from "better-auth/react";
 import * as SecureStore from "expo-secure-store";
 
 import { withServiceUrl } from "@/utils/service-url";
@@ -11,9 +11,9 @@ export const authClient = createAuthClient({
       scheme: "nocharge",
       storagePrefix: "nocharge",
       storage: SecureStore,
+      cookiePrefix: "nocharge.app",
     }),
   ],
-  serviceOptions: {
-    clientEnvPrefix: "EXPO_PUBLIC_",
-  },
 });
+
+export type Session = typeof authClient.$Infer.Session;
